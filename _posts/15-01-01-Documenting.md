@@ -1,6 +1,6 @@
 ---
 anchor: documenting
-title:  Documenting your Code
+title:  コードをドキュメント化する
 ---
 
-# Documenting your Code {#documenting_title}
+# コードをドキュメント化する {#documenting_title}
