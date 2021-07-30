@@ -37,4 +37,4 @@ PHP 5.5 からは、 [Zend OPcache][opcache-book] というオペコードキャ
 [Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: https://www.iis.net/downloads/microsoft/wincache-extension
 [PHP_accelerators]: https://wikipedia.org/wiki/List_of_PHP_accelerators
-[PHP Preloading]: https://www.php.net/opcache.preloading
+[コードの事前ロード]: https://www.php.net/opcache.preloading
