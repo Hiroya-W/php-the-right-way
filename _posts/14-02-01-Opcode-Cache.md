@@ -1,4 +1,5 @@
 ---
+title: オペコードキャッシュ
 isChild: true
 anchor:  opcode_cache
 ---
