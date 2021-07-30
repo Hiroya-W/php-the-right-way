@@ -72,5 +72,5 @@ PHPでクリーンなコードを書くための資料としておすすめな�
 [phpcs]: https://pear.php.net/package/PHP_CodeSniffer/
 [phpcbf]: https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically
 [st-cs]: https://github.com/benmatselby/sublime-phpcs
-[phpcsfixer]: https://cs.sensiolabs.org/
+[phpcsfixer]: https://cs.symfony.com/
 [cleancode]: https://github.com/jupeter/clean-code-php

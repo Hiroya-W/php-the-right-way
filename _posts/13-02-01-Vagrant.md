@@ -1,5 +1,4 @@
 ---
-title: Vagrant
 isChild: true
 anchor:  vagrant
 ---
@@ -25,15 +24,10 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
   **PHPに特化している。**
   ローカルVM以外に、クラウドサービスにデプロイすることもできる。
   プロビジョニングにはPuppetを使う。
-- [Protobox][Protobox]: vagrant をラップしたウェブ GUI で、ウェブ開発向けの仮想マシンを用意してくれる。
-  シンプルな YAML ドキュメントを使って、仮想マシン上にインストールするすべてものを制御できる。
 - [Phansible][Phansible]: 使いやすいインターフェイスで、PHP プロジェクト用の Ansible Playbook を生成してくれる。
-
 
 [Vagrant]: https://www.vagrantup.com/
 [Puppet]: https://puppet.com/
 [Chef]: https://www.chef.io/
-[Rove]: http://rove.io/
-[Puphpet]: https://puphpet.com/
-[Protobox]: https://www.getprotobox.com/
+[Puphpet]: https://github.com/puphpet/puphpet
 [Phansible]: http://phansible.com/

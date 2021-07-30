@@ -6,7 +6,7 @@ anchor:  composer_and_packagist
 
 ## Composer と Packagist {#composer_and_packagist_title}
 
-Composerは、PHP用としておすすめの依存管理ツールだ。プロジェクト内の依存関係を
+Composerは、PHP 用としておすすめの依存管理ツールだ。プロジェクト内の依存関係を
 `composer.json` ファイルに書いてシンプルなコマンドを打ち込めば、
 Composer が自動的にそれをダウンロードしてくれるだけでなく、オートロードの設定までしてくれるんだ。
 Composer は、node.js の NPM や Ruby の Bundler みたいなものだ。
@@ -34,7 +34,7 @@ mv composer.phar /usr/local/bin/composer
 
 #### Windows でのインストール
 
-Windowsの場合、一番簡単なのは [ComposerSetup][6] インストーラーを使う方法だ。
+Windowsの場合、一番簡単なのは [ComposerSetup] インストーラーを使う方法だ。
 これは、すべてのユーザーで使えるようにインストールしたうえで `$PATH` も設定してくれるので、
 あとはコマンドラインから `composer` を呼ぶだけで使えるようになる。
 
@@ -94,10 +94,10 @@ Composer は `composer.lock` というファイルを作る。
 
 ### 依存ライブラリのセキュリティ問題のチェック
 
-[Security Advisories Checker] は、Webサービスとコマンドラインツールとして提供されている。
+[Local PHP Security Checker] は、コマンドラインツールとして提供されている。
 `composer.lock` ファイルを調べて、もし依存関係に更新が必要なら教えてくれるものだ。
 
-### Composerでのグローバルな依存関係の扱い
+### Composer でのグローバルな依存関係の扱い
 
 Composer は、グローバルな依存関係やそのバイナリを扱うこともできる。
 使いかたはとても簡単で、単にコマンドの前に `global` をつけるだけでいい。
@@ -111,11 +111,11 @@ composer global require phpunit/phpunit
 インストールされたパッケージのバイナリを全体で使えるようにするには、 `~/.composer/vendor/bin`
 ディレクトリを環境変数 `$PATH` に追加すればいい。
 
-* [Composerとは]
+* [Composer とは]
 
 [Packagist]: https://packagist.org/
 [Twig]: https://twig.symfony.com/
 [libraries.io]: https://libraries.io/
-[Security Advisories Checker]: https://security.symfony.com/
-[Composerとは]: https://getcomposer.org/doc/00-intro.md
+[Local PHP Security Checker]: https://github.com/fabpot/local-php-security-checker
+[Composer とは]: https://getcomposer.org/doc/00-intro.md
 [ComposerSetup]: https://getcomposer.org/Composer-Setup.exe

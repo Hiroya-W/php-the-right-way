@@ -21,7 +21,7 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 
 これは、あらゆる意味でよろしくない。
 まず何と言っても、デバッグしづらいし、テストもしづらいし、読みづらい。
-あと、何も制限をかけていないので、大量のフィールドを出力してしまうことになる。
+あと、何も制限をかけていない場合に、大量のフィールドを出力してしまうことになる。
 
 同じことをもっとすっきり行う方法はいろいろある。[OOP](/#object-oriented-programming)が好きな人向けのやりかたもあれば
 [関数型プログラミング](/#functional-programming)が好きな人向けのやりかたもある。
@@ -45,7 +45,7 @@ foreach ($results as $row) {
 
 次に、このメソッドを保持するクラスを用意する。「モデル」だ。
 そして、シンプルな `.php` ファイルをもうひとつ作って、そこに画面表示ロジックを入れる。「ビュー」だ。
-これで、何となく [MVC] っぽくなった。これは、多くの [フレームワーク](/#frameworks_title) で使われている、OOPのアーキテクチャだ。
+これで、何となく [MVC] っぽくなった。これは、多くの [フレームワーク](/#frameworks) で使われている、OOPのアーキテクチャだ。
 
 **foo.php**
 
@@ -93,13 +93,8 @@ class FooModel
 <?php endforeach ?>
 {% endhighlight %}
 
-本質的にこれは、今どきのフレームワークがやっていることと、ほぼ同じだ。それを手作業でやってみた。
+本質的にこれは、今どきのフレームワークがやっていることと同じだ。それを手作業でやってみた。
 毎回こんなことをする必要はないかもしれないが、画面表示とデータベース操作を混在させすぎると、
 [ユニットテスト](/#unit-testing) をしたくなったときにやっかいな問題が発生してしまう。
 
-[PHPBridge] に、 [Creating a Data Class] という記事が公開されている。
-ここで扱ったのと同じ話題をとりあげていて、データベース操作に慣れた人にとって最適の記事だ。
-
 [MVC]: https://code.tutsplus.com/tutorials/mvc-for-noobs--net-10488
-[PHPBridge]: https://phpbridge.org/docs/
-[Creating a Data Class]: https://phpbridge.org/intro-to-php/creating_a_data_class

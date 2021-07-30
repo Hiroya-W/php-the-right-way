@@ -1,5 +1,4 @@
 ---
-title: 例外処理
 isChild: true
 anchor:  exceptions
 ---
@@ -72,7 +71,6 @@ class ValidationException extends Exception {}
 * [例外について][exceptions]
 * [SPL 拡張モジュール][splexe]
 * [PHP での例外のネスト][nesting-exceptions-in-php]
-* [PHP 5.3での例外処理のベストプラクティス][exception-best-practices53]
 
 
 [splext]: /#standard_php_library

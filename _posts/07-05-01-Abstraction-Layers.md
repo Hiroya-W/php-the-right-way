@@ -17,6 +17,7 @@ PDOではデータベースへの接続の抽象化しかしないが、フレ�
 以下の抽象化レイヤーは、 [PSR-0][psr0] や [PSR-4][psr4] で定められた標準名前空間に従っている。
 これらはアプリケーションを問わずに利用できる。
 
+* [Atlas][5]
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [Propel][7]
@@ -26,6 +27,7 @@ PDOではデータベースへの接続の抽象化しかしないが、フレ�
 [1]: https://secure.php.net/book.pdo
 [2]: https://www.doctrine-project.org/projects/dbal.html
 [4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
+[5]: https://atlasphp.io
 [6]: https://github.com/auraphp/Aura.Sql
 [7]: http://propelorm.org/
 [psr0]: https://www.php-fig.org/psr/psr-0/

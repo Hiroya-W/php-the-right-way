@@ -418,22 +418,3 @@ PHP 5.3 以降では、三項演算子の第二項を省略できるようにな
 "式1 ?: 式3" みたいに書くと、式1がTRUEの場合は式1を返して、そうじゃない場合は式3を返す。
 
 * [三項演算子](http://php.net/language.operators.comparison)
-
-## 変数の宣言
-
-コードをより「きれい」にするために、変数を宣言してよりわかりやすい名前をつけたくなることがよくある。
-実際のところこれは、スクリプト内でメモリを二倍消費していることになる。
-次の例で考えてみよう。仮にこの文字列が1MBぶんのデータを含んでいたとすると、
-変数をコピーすれば実行時のメモリ消費量が2MBになってしまう。
-
-{% highlight php %}
-<?php
-$about = 'A very long string of text';    // メモリを2MB消費する
-echo $about;
-
-// vs
-
-echo 'A very long string of text';        // メモリの消費は1MBだけ
-{% endhighlight %}
-
-* [パフォーマンス改善のヒント](http://web.archive.org/web/20140625191431/https://developers.google.com/speed/articles/optimizing-php)

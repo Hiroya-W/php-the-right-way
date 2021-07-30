@@ -32,11 +32,11 @@ PHP をコマンドラインで実行してみよう。
 {% highlight php %}
 <?php
 if ($argc !== 2) {
-    echo "Usage: php hello.php <name>.\n";
+    echo "Usage: php hello.php <name>" . PHP_EOL;
     exit(1);
 }
 $name = $argv[1];
-echo "Hello, $name\n";
+echo "Hello, $name" . PHP_EOL;
 {% endhighlight %}
 
 PHP のスクリプトを実行すると、コマンドラインの引数に関する変数がふたつ設定される。
