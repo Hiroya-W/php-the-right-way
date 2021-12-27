@@ -24,6 +24,18 @@ brew install php@8.0
 Homebrew の PHP のバージョンを切り替えるには、環境変数 `PATH` を設定すればいい。
 [brew-php-switcher][brew-php-switcher] を使えば、そのへんを自動的にやってくれる。
 
+手動でリンクを消したり、追加したりすることで、使いたい PHP のバージョンに手動で切り替えることもできる。
+
+```
+brew unlink php
+brew link --overwrite php@7.4  
+```
+
+```
+brew unlink php
+brew link --overwrite php@8.0
+```
+
 ### Macports によるインストール
 
 [MacPorts] プロジェクトはオープンソースのコミュニティによる取り組みで、
