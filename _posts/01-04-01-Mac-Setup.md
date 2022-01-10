@@ -13,12 +13,12 @@ macOS には PHP が最初からインストールされているけど、最新
 
 [Homebrew] は macOS 用の強力なパッケージ管理ツールで、
 PHP やその拡張モジュールも簡単にインストールできる。
-Homebrew のコアリポジトリで、PHP 5.6、7.0、7.1、7.2、7.3、7.4、そして PHP 8.0 用の "formulae" が公開されている。
+Homebrew のコアリポジトリで、PHP 5.6、7.0、7.1、7.2、7.3、7.4、8.0、そして PHP 8.1 用の "formulae" が公開されている。
 
 最新版の PHP をインストールするには、こんなコマンドを実行すればいい。
 
 ```
-brew install php@8.0
+brew install php@8.1
 ```
 
 Homebrew の PHP のバージョンを切り替えるには、環境変数 `PATH` を設定すればいい。
@@ -28,12 +28,12 @@ Homebrew の PHP のバージョンを切り替えるには、環境変数 `PATH
 
 ```
 brew unlink php
-brew link --overwrite php@7.4  
+brew link --overwrite php@8.0
 ```
 
 ```
 brew unlink php
-brew link --overwrite php@8.0
+brew link --overwrite php@8.1
 ```
 
 ### Macports によるインストール
@@ -45,14 +45,14 @@ OS X 上のオープンソースソフトウェアのコンパイルやインス
 MacPorts はコンパイル済みのバイナリにも対応しているので、関連するライブラリなどを毎回ソースからコンパイルしなおす必要はない。
 なので、まだ何もパッケージをインストールしていない状態でも、時間の心配をする必要はない。
 
-現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71`、`php72`、`php73`、`php74`、`php80` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
+現時点でインストールできるのは `php54`、`php55`、`php56`、`php70`、`php71`、`php72`、`php73`、`php74`、`php80`、`php81` のいずれかで、`port install` コマンドを使ってこのようにインストールする。
 
     sudo port install php74
-    sudo port install php80
+    sudo port install php81
 
 そして、`select` コマンドを使って、アクティブな PHP を切り替える。
 
-    sudo port select --set php php80
+    sudo port select --set php php81
 
 ### phpbrew によるインストール
 
