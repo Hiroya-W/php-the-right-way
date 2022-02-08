@@ -48,11 +48,11 @@ UTF-8 文字列を扱うなら常にそう指定しておかないといけな�
 PHP 5.4.0 以降では、 `htmlentities()` や `htmlspecialchars()` のデフォルトエンコーディングが UTF-8 に変わった。
 
 最後に、他の人たち向けに配布するつもりのアプリケーションなど、その実行環境で `mbstring` が使えるかどうか定かではない場合は、
-Composer の [patchwork/utf8] パッケージを使うことも検討しよう。
+Composer の [symfony/polyfill-mbstring] パッケージを使うことも検討しよう。
 これは、もし `mbstring` があればそれを使い、なければ非 UTF-8 関数にフォールバックするというものだ。
 
 [マルチバイト文字列拡張モジュール]: https://secure.php.net/book.mbstring
-[patchwork/utf8]: https://packagist.org/packages/patchwork/utf8
+[symfony/polyfill-mbstring]: https://packagist.org/packages/symfony/polyfill-mbstring
 
 ### データベースレベルでのUTF-8
 
