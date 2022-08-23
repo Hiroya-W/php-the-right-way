@@ -16,6 +16,7 @@ anchor:  complementary_testing_tools
 * [Prophecy] は強力で柔軟な PHP 用モックオブジェクトフレームワークで、[PHPSpec] に組み込まれている。さらに [PHPUnit] と組み合わせても使える。
 * [php-mock] はPHPの組み込み関数のモックを作りやすくするためのライブラリだ。
 * [Infection] は [ミューテーション解析] をPHPで実装したもので、自分が書いたテストがどれくらい効果的かを測定してくれる。
+* [PHPUnit Polyfills] は、様々なPHPUnitのバージョンでテストスイートを実行する必要がある場合に、PHPUnitの複数バージョンで互換性があるテストを生成できるライブラリだ。
 
 
 [Selenium]: https://www.seleniumhq.org/
@@ -27,3 +28,4 @@ anchor:  complementary_testing_tools
 [php-mock]: https://github.com/php-mock/php-mock
 [Infection]: https://github.com/infection/infection
 [ミューテーション解析]: https://ja.wikipedia.org/wiki/%E3%83%9F%E3%83%A5%E3%83%BC%E3%83%86%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E8%A7%A3%E6%9E%90
+[PHPUnit Polyfills]: https://github.com/Yoast/PHPUnit-Polyfills
