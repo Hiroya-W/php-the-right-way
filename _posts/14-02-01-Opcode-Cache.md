@@ -6,7 +6,7 @@ anchor:  opcode_cache
 
 ## オペコードキャッシュ {#opcode_cache_title}
 
-PHPファイルを実行するときには、まずそれを[オペコード](https://secure.php.net/manual/internals2.opcodes.php) (CPU用の機械語の指示)
+PHPファイルを実行するときには、まずそれを[オペコード](https://php-legacy-docs.zend.com/manual/php4/en/internals2.opcodes) (CPU用の機械語の指示)
 にコンパイルしなければいけない。
 ソースコードに変更がなければ、オペコードも同じものになる。
 ということは、PHP ファイルに変更がなければコンパイル処理は CPU リソースの無駄遣いになるということだ。
