@@ -33,7 +33,7 @@ PHP 5.5 からは、 [Zend OPcache][opcache-book] というオペコードキャ
 
 
 [opcache-book]: https://secure.php.net/book.opcache
-[APC]: https://secure.php.net/book.apc
+[APC]: https://www.php.net/book.apcu
 [XCache]: https://xcache.lighttpd.net/
 [Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: https://www.iis.net/downloads/microsoft/wincache-extension
