@@ -10,8 +10,8 @@ anchor:  windows_setup
 PHPフォルダのルート (php.exe がある場所) に [PATH][windows-path] を通しておくといい。そうすれば、どこからでも PHP を実行できるようになる。
 
 学習用にローカルで開発する場合は PHP 5.4 以降のビルトインウェブサーバーを使えばよいので、細かい設定を気にする必要はない。
-もしウェブサーバーとかMySQLとかも含めた「全部入り」を使いたければ、[Web Platform Installer][wpi]や
-[XAMPP][xampp]、[EasyPHP][easyphp]、[OpenServer][openserver]、そして[WAMP][wamp]などがお勧めだ。これらを使えば Windows 用の開発環境を手早く構築できる。
+もしウェブサーバーとかMySQLとかも含めた「全部入り」を使いたければ、[XAMPP][xampp]、[EasyPHP][easyphp]、[OpenServer][openserver]、そして[WAMP][wamp]などがお勧めだ。これらを使えば Windows 用の開発環境を手早く構築できる。
+
 とはいうものの、これらのツールは実際の運用環境と微妙に異なる。なので、たとえば「Windows で開発して Linux にデプロイ」
 とかいう場合は環境の違いに気をつける必要がある。
 
@@ -34,5 +34,4 @@ Chris Tankersleyは彼が[WindowsでのPHP開発][windows-tools]において使�
 [php-iis]: http://php.iis.net/
 [windows-path]: http://www.windows-commandline.com/set-path-command-line/
 [windows-tools]: http://ctankersley.com/2016/11/13/developing-on-windows-2016/
-[wpi]: https://www.microsoft.com/web/downloads/platform.aspx
 [xampp]: http://www.apachefriends.org/en/xampp.html
