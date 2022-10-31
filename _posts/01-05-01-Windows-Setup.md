@@ -26,12 +26,12 @@ Windowsで開発したアプリケーションをLinux（などの非Windows環�
 
 Chris Tankersleyは彼が[WindowsでのPHP開発][windows-tools]において使えるツールについての役に立つ記事を残しておいてくれている。
 
-[easyphp]: http://www.easyphp.org/
+[easyphp]: https://www.easyphp.org/
 [phpmanager]: http://phpmanager.codeplex.com/
 [openserver]: http://open-server.ru/
-[wamp]: http://www.wampserver.com/en/
-[php-downloads]: http://windows.php.net/download/
-[php-iis]: http://php.iis.net/
-[windows-path]: http://www.windows-commandline.com/set-path-command-line/
-[windows-tools]: http://ctankersley.com/2016/11/13/developing-on-windows-2016/
+[wamp]: https://www.wampserver.com/en/
+[php-downloads]: https://windows.php.net/download/
+[php-iis]: https://php.iis.net/
+[windows-path]: https://www.windows-commandline.com/set-path-command-line/
+[windows-tools]: https://ctankersley.com/2016/11/13/developing-on-windows-2016/
 [xampp]: http://www.apachefriends.org/en/xampp.html

@@ -28,7 +28,7 @@ Ruby の [RSpec project][Rspec] の影響を受けている。
 * [Codeception] はフルスタックのテストフレームワークで、BDD の原則に従っている。
 
 
-[Behat]: http://behat.org/
+[Behat]: https://behat.org/
 [Cucumber]: https://cucumber.io/
 [PHPSpec]: https://www.phpspec.net/
 [RSpec]: https://rspec.info/

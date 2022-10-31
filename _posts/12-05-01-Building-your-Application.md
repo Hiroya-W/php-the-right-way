@@ -140,7 +140,7 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [buildautomation]: https://wikipedia.org/wiki/Build_automation
 [Phing]: https://www.phing.info/
 [Apache Ant]: https://ant.apache.org/
-[Capistrano]: http://capistranorb.com/
+[Capistrano]: https://capistranorb.com/
 [Ansistrano]: https://ansistrano.com
 [phpdeploy_deployer]: https://www.sitepoint.com/deploying-php-applications-with-deployer/
 [Chef]: https://www.chef.io/
