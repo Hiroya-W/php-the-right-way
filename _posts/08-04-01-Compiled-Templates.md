@@ -70,7 +70,7 @@ PHPはオブジェクト指向言語として成熟してきてはいるもの�
 {% endhighlight %}
 
 
-[article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
+[article_templating_engines]: http://fabien.potencier.org/templating-engines-in-php.html
 [Twig]: https://twig.symfony.com/
 [Brainy]: https://github.com/box/brainy
 [Smarty]: https://www.smarty.net/
