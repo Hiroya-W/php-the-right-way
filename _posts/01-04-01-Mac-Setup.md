@@ -89,5 +89,5 @@ Apple がインストールした php のバイナリは上書きせず、まっ
 [apache]: https://httpd.apache.org/
 [nginx]: https://www.nginx.com/
 [mamp-downloads]: https://www.mamp.info/en/downloads/
-[xampp]: https://www.apachefriends.org/jp/index.html
+[xampp]: https://www.apachefriends.org/
 [brew-php-switcher]: https://github.com/philcook/brew-php-switcher
