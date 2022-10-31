@@ -45,7 +45,7 @@ test.php で `var_dump()` とかいうやり方もあるけど、
 * [atoum](https://github.com/atoum/atoum)
 * [Kahlan](https://github.com/crysalead/kahlan)
 * [Peridot](https://peridot-php.github.io/)
-* [SimpleTest](http://simpletest.org)
+* [SimpleTest](https://github.com/simpletest/simpletest)
 
 ### インテグレーションテスト
 
