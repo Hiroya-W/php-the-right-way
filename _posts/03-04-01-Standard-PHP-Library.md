@@ -13,8 +13,8 @@ Standard PHP Library (SPL) とは PHP に組み込まれた標準ライブラリ
 それをイテレータで反復処理されることもできる。
 
 * [SPL][spl]
-* [Lynda.comのSPL動画コース(有償)][spllynda]
+* [LinkedIn.comのSPL動画コース(有償)][linkedin]
 
 
 [spl]: https://secure.php.net/book.spl
-[spllynda]: https://www.lynda.com/PHP-tutorials/Up-Running-Standard-PHP-Library/175038-2.html
+[linkedin]: https://www.linkedin.com/learning/learning-the-standard-php-library?trk=lynda_redirect_learning
