@@ -28,7 +28,7 @@ Chris Tankersleyは彼が[WindowsでのPHP開発][windows-tools]において使�
 
 [easyphp]: https://www.easyphp.org/
 [phpmanager]: http://phpmanager.codeplex.com/
-[openserver]: http://open-server.ru/
+[openserver]: https://ospanel.io/
 [wamp]: https://www.wampserver.com/en/
 [php-downloads]: https://windows.php.net/download/
 [php-iis]: https://php.iis.net/

@@ -19,7 +19,7 @@ anchor:  complementary_testing_tools
 * [PHPUnit Polyfills] は、様々なPHPUnitのバージョンでテストスイートを実行する必要がある場合に、PHPUnitの複数バージョンで互換性があるテストを生成できるライブラリだ。
 
 
-[Selenium]: https://www.seleniumhq.org/
+[Selenium]: https://www.selenium.dev/
 [PHPUnit と組み合わせて使える]: https://github.com/giorgiosironi/phpunit-selenium/
 [Mockery]: https://github.com/padraic/mockery
 [PHPUnit]: https://phpunit.de/

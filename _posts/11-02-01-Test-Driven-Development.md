@@ -68,7 +68,7 @@ test.php で `var_dump()` とかいうやり方もあるけど、
 
 #### 機能テスト用のツール
 
-* [Selenium](https://docs.seleniumhq.org/)
+* [Selenium](https://www.selenium.dev/)
 * [Mink](https://mink.behat.org/)
 * [Codeception](https://codeception.com/) これはフルスタックのテスティングフレームワークで、受け入れテスト用のツール群も含んでいる
 * [Storyplayer](https://datasift.github.io/storyplayer/) これはフルスタックのテスティングフレームワークで、テスト環境をオンデマンドで作ったり破棄したりする機能も含んでいる
