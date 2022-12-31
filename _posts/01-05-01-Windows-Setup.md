@@ -34,4 +34,4 @@ Chris Tankersleyは彼が[WindowsでのPHP開発][windows-tools]において使�
 [php-iis]: https://php.iis.net/
 [windows-path]: https://www.windows-commandline.com/set-path-command-line/
 [windows-tools]: https://ctankersley.com/2016/11/13/developing-on-windows-2016/
-[xampp]: http://www.apachefriends.org/
+[xampp]: https://www.apachefriends.org/
