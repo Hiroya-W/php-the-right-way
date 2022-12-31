@@ -19,4 +19,5 @@ anchor:  design_patterns
 
 PHPでのデザインパターンや実装例については、これを見ればいい。
 
+<https://refactoring.guru/design-patterns/php>
 [https://designpatternsphp.readthedocs.io/](https://web.archive.org/web/20221007015016/https://designpatternsphp.readthedocs.io/en/latest/README.html) (アーカイブ済み, [PDF download](https://www.computer-pdf.com/web-programming/php/924-tutorial-designpatternsphp-documentation.html))
