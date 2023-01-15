@@ -14,7 +14,7 @@ anchor:  object_caching
 そうすればパフォーマンスは劇的に向上するし、データベースサーバーにかかる負荷も減らせる。
 
 バイトコードキャッシュ用ソリューションの多くはカスタムデータも同様にキャッシュできるので、さらに活用できる。
-APCu や XCache そして WinCache はすべて API を提供しており、PHP コードのデータをメモリキャッシュに格納できる。
+APCu や WinCache は API を提供しており、PHP コードのデータをメモリキャッシュに格納できる。
 
 オブジェクトキャッシュシステムとして最もよく使われているのは APCu と memcached だ。
 APCu はオブジェクトキャッシュの選択肢として最適で、
@@ -62,5 +62,4 @@ APCu は、APC のオブジェクトキャッシュ機能を PHP 5.5 以降で�
 * [APC 関数](https://secure.php.net/ref.apc)
 * [Memcached](https://memcached.org/)
 * [Redis](https://redis.io/)
-* [XCache API](https://xcache.lighttpd.net/wiki/XcacheApi)
 * [WinCache 関数](https://secure.php.net/ref.wincache)
