@@ -31,9 +31,9 @@ if (strpos('testing', 'test') !== false) {    // 厳格な比較が行われる�
 }
 {% endhighlight %}
 
-* [比較演算子](http://php.net/language.operators.comparison)
-* [比較の表](http://php.net/types.comparisons)
-* [比較のチートシート](http://phpcheatsheets.com/index.php?page=compare)
+* [比較演算子](https://www.php.net/language.operators.comparison)
+* [比較の表](https://www.php.net/types.comparisons)
+* [比較のチートシート](https://phpcheatsheets.com/index.php?page=compare)
 
 ## 条件式
 
@@ -74,7 +74,7 @@ function test($a)
 
 {% endhighlight %}
 
-* [If 文](http://php.net/control-structures.if)
+* [If 文](https://www.php.net/control-structures.if)
 
 ### Switch 文
 
@@ -108,7 +108,7 @@ function test($a)
 }
 {% endhighlight %}
 
-* [Switch 文](http://php.net/control-structures.switch)
+* [Switch 文](https://www.php.net/control-structures.switch)
 * [PHP switch](http://phpswitch.com/)
 
 ## グローバル名前空間
@@ -133,8 +133,8 @@ function array()
 }
 {% endhighlight %}
 
-* [グローバル空間](http://php.net/language.namespaces.global)
-* [グローバルに関するルール](http://php.net/userlandnaming.rules)
+* [グローバル空間](https://www.php.net/language.namespaces.global)
+* [グローバルに関するルール](https://www.php.net/userlandnaming.rules)
 
 ## 文字列
 
@@ -158,7 +158,7 @@ $a = 'Multi-line example'      // 連結演算子 (.)
     . 'of what to do';
 {% endhighlight %}
 
-* [文字列演算子](http://php.net/language.operators.string)
+* [文字列演算子](https://www.php.net/language.operators.string)
 
 ### 文字列型
 
@@ -187,7 +187,7 @@ echo 'This is my string, look at how pretty it is.';    // 単純な文字列で
  */
 {% endhighlight %}
 
-* [シングルクォート](http://php.net/language.types.string#language.types.string.syntax.single)
+* [シングルクォート](https://www.php.net/language.types.string#language.types.string.syntax.single)
 
 #### ダブルクォート
 
@@ -238,7 +238,7 @@ $juice = array('apple', 'orange', 'plum');
 echo "I drank some juice made of {$juice[1]}s";   // これで、$juice[1]がパースできる
 {% endhighlight %}
 
-* [ダブルクォート](http://php.net/language.types.string#language.types.string.syntax.double)
+* [ダブルクォート](https://www.php.net/language.types.string#language.types.string.syntax.double)
 
 #### Nowdoc 構文
 
@@ -264,7 +264,7 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
  */
 {% endhighlight %}
 
-* [Nowdoc](http://php.net/language.types.string#language.types.string.syntax.nowdoc)
+* [Nowdoc](https://www.php.net/language.types.string#language.types.string.syntax.nowdoc)
 
 #### ヒアドキュメント構文
 
@@ -292,7 +292,7 @@ EOD;                        // 終了文字列はそれ単体でひとつの行�
  */
 {% endhighlight %}
 
-* [ヒアドキュメント](http://php.net/language.types.string#language.types.string.syntax.heredoc)
+* [ヒアドキュメント](https://www.php.net/language.types.string#language.types.string.syntax.heredoc)
 
 > 複数行にまたがる文字列は、こんなふうに複数行にまたがる文を書くことによっても実現できる。
 
@@ -332,8 +332,7 @@ $a are parsed.
 それぞれの意味、そして変更することによる影響を本当に理解しているのでない限り、
 そんな些細な最適化は避けること。
 
-* [シングルクォートのほうが速いという神話への反証](http://nikic.github.io/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html)
-
+* [シングルクォートのほうが速いという神話への反証](https://www.npopov.com/2012/01/09/Disproving-the-Single-Quotes-Performance-Myth.html)
 
 ## 三項演算子
 
@@ -417,4 +416,4 @@ return ($a != 3 && $b != 4) || $c == 5;
 PHP 5.3 以降では、三項演算子の第二項を省略できるようになった。
 "式1 ?: 式3" みたいに書くと、式1がTRUEの場合は式1を返して、そうじゃない場合は式3を返す。
 
-* [三項演算子](http://php.net/language.operators.comparison)
+* [三項演算子](https://www.php.net/language.operators.comparison)
