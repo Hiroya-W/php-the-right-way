@@ -43,7 +43,7 @@ test.php で `var_dump()` とかいうやり方もあるけど、
 デファクトスタンダードのフレームワークだ。しかしそれ以外にも選択肢がある。
 
 * [atoum](https://github.com/atoum/atoum)
-* [Kahlan](https://github.com/crysalead/kahlan)
+* [Kahlan](https://github.com/kahlan/kahlan)
 * [Peridot](https://peridot-php.github.io/)
 * [SimpleTest](https://github.com/simpletest/simpletest)
 
