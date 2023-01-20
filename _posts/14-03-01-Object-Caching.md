@@ -42,24 +42,24 @@ APCu を使うロジックの例を示す。
 {% highlight php %}
 <?php
 // 'expensive_data' がキャッシュに保存されているかどうかを調べる
-$data = apc_fetch('expensive_data');
+$data = apcu_fetch('expensive_data');
 if ($data === false) {
     // データがキャッシュにないときは、コストのかかる操作をして取得する。
     // そして、その結果を保存してあとで使えるようにする。
-    apc_add('expensive_data', $data = get_expensive_data());
+    apcu_add('expensive_data', $data = get_expensive_data());
 }
 
 print_r($data);
 {% endhighlight %}
 
 PHP 5.5 より前のバージョンでは、APC がオブジェクトキャッシュとバイトコードキャッシュの両方の機能を提供していた。
-APCu は、APC のオブジェクトキャッシュ機能を PHP 5.5 以降で使えるようにするものだ。
+新しい APCu は、APC のオブジェクトキャッシュ機能を PHP 5.5 以降で使えるようにするものだ。
 というのも、PHP 5.5 以降ではバイトコードキャッシュ（OPcache）の機能が標準で組み込まれるようになったからだ。
 
 ### オブジェクトキャッシュシステムについての参考資料
 
 * [APCu](https://github.com/krakjoe/apcu)
-* [APC 関数](https://secure.php.net/ref.apc)
+* [APCu Documentation](https://www.php.net/apcu)
 * [Memcached](https://memcached.org/)
 * [Redis](https://redis.io/)
 * [WinCache 関数](https://secure.php.net/ref.wincache)
