@@ -79,7 +79,6 @@ Apple がインストールした php のバイナリは上書きせず、まっ
 でも、インストーラーに縛られてしまって自由にいじれなくなるという弱点もある。
 
 [Homebrew]: https://brew.sh/
-[Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
 [MacPorts]: https://www.macports.org/install.php
 [phpbrew]: https://github.com/phpbrew/phpbrew
 [php-osx.liip.ch]: https://web.archive.org/web/20220505163210/https://php-osx.liip.ch/
