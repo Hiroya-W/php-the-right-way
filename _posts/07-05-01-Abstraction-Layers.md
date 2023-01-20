@@ -25,7 +25,7 @@ PDOではデータベースへの接続の抽象化しかしないが、フレ�
 * [Zend-db][4]
 
 
-[1]: https://secure.php.net/book.pdo
+[1]: https://www.php.net/book.pdo
 [2]: https://www.doctrine-project.org/projects/dbal.html
 [4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
 [5]: https://atlasphp.io

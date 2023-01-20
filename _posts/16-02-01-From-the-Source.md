@@ -6,5 +6,5 @@ anchor:  from_the_source
 
 ## ソースから {#from_the_source_title}
 
-* [PHP のサイト](https://secure.php.net/)
-* [PHP のドキュメント](https://secure.php.net/docs.php)
+* [PHP のサイト](https://www.php.net/)
+* [PHP のドキュメント](https://www.php.net/docs.php)

@@ -69,7 +69,7 @@ INSERT や UPDATE などの書き込み操作の場合は、まず [データを
 その後で、その他 (HTML タグや JavaScript など) のエスケープを行う。
 PDO はあくまでも SQL 用のエスケープを行うものであり、アプリケーション全体の面倒をみてくれるわけではない。
 
-* [PDOについて調べる]
+* [PDOについて調べる][pdo]
 
 あと、データベースのコネクションはリソースを使うということにも気をつけよう。
 コネクションを明示的に閉じることを忘れたせいでリソースを食いつぶしてしまうなんて話は珍しくない。
@@ -82,7 +82,6 @@ PDOを使っている場合は、オブジェクトへの参照をすべて削�
 * [PDOの接続について調べる]
 
 
-[pdo]: https://secure.php.net/pdo
+[pdo]: https://www.php.net/pdo
 [SQLインジェクション]: https://web.archive.org/web/20210413233627/http://wiki.hashphp.org/Validation
-[PDOについて調べる]: https://secure.php.net/book.pdo
-[PDOの接続について調べる]: https://secure.php.net/pdo.connections
+[PDOの接続について調べる]: https://www.php.net/pdo.connections

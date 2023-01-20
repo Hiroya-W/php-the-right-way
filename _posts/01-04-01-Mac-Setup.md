@@ -83,7 +83,7 @@ Apple がインストールした php のバイナリは上書きせず、まっ
 [MacPorts]: https://www.macports.org/install.php
 [phpbrew]: https://github.com/phpbrew/phpbrew
 [php-osx.liip.ch]: https://web.archive.org/web/20220505163210/https://php-osx.liip.ch/
-[mac-compile]: https://secure.php.net/install.macosx.compile
+[mac-compile]: https://www.php.net/install.macosx.compile
 [xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
 ["Command Line Tools for XCode"]: https://developer.apple.com/downloads
 [apache]: https://httpd.apache.org/

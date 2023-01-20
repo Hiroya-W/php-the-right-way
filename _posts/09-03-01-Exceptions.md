@@ -75,6 +75,6 @@ class ValidationException extends Exception {}
 
 
 [splext]: /#standard_php_library
-[exceptions]: https://secure.php.net/language.exceptions
-[splexe]: https://secure.php.net/spl.exceptions
+[exceptions]: https://www.php.net/language.exceptions
+[splexe]: https://www.php.net/spl.exceptions
 [nesting-exceptions-in-php]: https://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/

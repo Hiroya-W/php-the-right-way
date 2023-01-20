@@ -51,7 +51,7 @@ PHP 5.4.0 以降では、 `htmlentities()` や `htmlspecialchars()` のデフォ
 Composer の [symfony/polyfill-mbstring] パッケージを使うことも検討しよう。
 これは、もし `mbstring` があればそれを使い、なければ非 UTF-8 関数にフォールバックするというものだ。
 
-[マルチバイト文字列拡張モジュール]: https://secure.php.net/book.mbstring
+[マルチバイト文字列拡張モジュール]: https://www.php.net/book.mbstring
 [symfony/polyfill-mbstring]: https://packagist.org/packages/symfony/polyfill-mbstring
 
 ### データベースレベルでのUTF-8
@@ -154,19 +154,19 @@ header('Content-Type: text/html; charset=UTF-8'); // すでに default_charset �
 
 ### あわせて読みたい
 
-* [PHPマニュアル: 文字列演算子](https://secure.php.net/language.operators.string)
-* [PHPマニュアル: String関数](https://secure.php.net/ref.strings)
-    * [`strpos()`](https://secure.php.net/function.strpos)
-    * [`strlen()`](https://secure.php.net/function.strlen)
-    * [`substr()`](https://secure.php.net/function.substr)
-* [PHPマニュアル: マルチバイト文字列関数](https://secure.php.net/ref.mbstring)
-    * [`mb_strpos()`](https://secure.php.net/function.mb-strpos)
-    * [`mb_strlen()`](https://secure.php.net/function.mb-strlen)
-    * [`mb_substr()`](https://secure.php.net/function.mb-substr)
-    * [`mb_internal_encoding()`](https://secure.php.net/function.mb-internal-encoding)
-    * [`mb_http_output()`](https://secure.php.net/function.mb-http-output)
-    * [`htmlentities()`](https://secure.php.net/function.htmlentities)
-    * [`htmlspecialchars()`](https://secure.php.net/function.htmlspecialchars)
+* [PHPマニュアル: 文字列演算子](https://www.php.net/language.operators.string)
+* [PHPマニュアル: String関数](https://www.php.net/ref.strings)
+    * [`strpos()`](https://www.php.net/function.strpos)
+    * [`strlen()`](https://www.php.net/function.strlen)
+    * [`substr()`](https://www.php.net/function.substr)
+* [PHPマニュアル: マルチバイト文字列関数](https://www.php.net/ref.mbstring)
+    * [`mb_strpos()`](https://www.php.net/function.mb-strpos)
+    * [`mb_strlen()`](https://www.php.net/function.mb-strlen)
+    * [`mb_substr()`](https://www.php.net/function.mb-substr)
+    * [`mb_internal_encoding()`](https://www.php.net/function.mb-internal-encoding)
+    * [`mb_http_output()`](https://www.php.net/function.mb-http-output)
+    * [`htmlentities()`](https://www.php.net/function.htmlentities)
+    * [`htmlspecialchars()`](https://www.php.net/function.htmlspecialchars)
 * [Stack Overflow: What factors make PHP Unicode-incompatible?](https://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
 * [Stack Overflow: Best practices in PHP and MySQL with international strings](https://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
 * [How to support full Unicode in MySQL databases](https://mathiasbynens.be/notes/mysql-utf8mb4)

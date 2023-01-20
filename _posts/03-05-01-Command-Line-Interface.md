@@ -59,9 +59,9 @@ Hello, world
 
  * [PHP をコマンドラインから実行する方法][php-cli]
 
-[phpinfo]: https://secure.php.net/function.phpinfo
-[cli-options]: https://secure.php.net/features.commandline.options
-[argc]: https://secure.php.net/reserved.variables.argc
-[argv]: https://secure.php.net/reserved.variables.argv
+[phpinfo]: https://www.php.net/function.phpinfo
+[cli-options]: https://www.php.net/features.commandline.options
+[argc]: https://www.php.net/reserved.variables.argc
+[argv]: https://www.php.net/reserved.variables.argv
 [exit-codes]: https://www.gsp.com/cgi-bin/man.cgi?section=3&amp;topic=sysexits
-[php-cli]: https://secure.php.net/features.commandline.options
+[php-cli]: https://www.php.net/manual/en/features.commandline.php

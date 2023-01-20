@@ -17,7 +17,7 @@ PHPファイルを実行するときには、まずそれを[オペコード](ht
 オペコードキャッシュを使えば、アプリケーションの実行速度が相当向上する可能性がある。
 PHP 5.5 からは、 [Zend OPcache][opcache-book] というオペコードキャッシュが標準で組み込まれるようになった。
 使っている PHP パッケージやディストリビューションにもよるけど、普通はデフォルトで有効になっていることが多い。
-[opcache.enable](https://secure.php.net/manual/opcache.configuration.php#ini.opcache.enable)
+[opcache.enable](https://www.php.net/manual/opcache.configuration.php#ini.opcache.enable)
 や、 `phpinfo()` の出力で確認しよう。
 古いバージョンのPHPなら、PECL の拡張モジュールが使える。
 
@@ -30,7 +30,7 @@ PHP 5.5 からは、 [Zend OPcache][opcache-book] というオペコードキャ
 * [コードの事前ロード] - PHP >= 7.4
 
 
-[opcache-book]: https://secure.php.net/book.opcache
+[opcache-book]: https://www.php.net/book.opcache
 [Zend Optimizer+]: https://github.com/zendtech/ZendOptimizerPlus
 [WinCache]: https://www.iis.net/downloads/microsoft/wincache-extension
 [PHP_accelerators]: https://wikipedia.org/wiki/List_of_PHP_accelerators

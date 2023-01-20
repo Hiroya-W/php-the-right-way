@@ -16,5 +16,5 @@ Standard PHP Library (SPL) とは PHP に組み込まれた標準ライブラリ
 * [LinkedIn.comのSPL動画コース(有償)][linkedin]
 
 
-[spl]: https://secure.php.net/book.spl
+[spl]: https://www.php.net/book.spl
 [linkedin]: https://www.linkedin.com/learning/learning-the-standard-php-library?trk=lynda_redirect_learning

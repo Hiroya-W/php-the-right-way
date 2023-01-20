@@ -62,4 +62,4 @@ PHP 5.5 より前のバージョンでは、APC がオブジェクトキャッ�
 * [APCu Documentation](https://www.php.net/apcu)
 * [Memcached](https://memcached.org/)
 * [Redis](https://redis.io/)
-* [WinCache 関数](https://secure.php.net/ref.wincache)
+* [WinCache 関数](https://www.php.net/ref.wincache)

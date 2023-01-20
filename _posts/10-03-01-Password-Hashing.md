@@ -72,7 +72,7 @@ if (password_verify('bad-password', $passwordHash)) {
 * [PHP `password_hash()` RFC] [4]
 
 
-[1]: https://secure.php.net/function.password-hash
+[1]: https://www.php.net/function.password-hash
 [2]: https://github.com/ircmaxell/password_compat
 [3]: http://ja.wikipedia.org/wiki/暗号学的ハッシュ関数
 [4]: https://wiki.php.net/rfc/password_hash

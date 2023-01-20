@@ -15,4 +15,4 @@ PHPの勉強を始めるときに、わざわざ本格的なウェブサーバ�
 * [コマンドラインで使えるビルトインウェブサーバーについて、もっと調べる][cli-server]
 
 
-[cli-server]: http://php.net/features.commandline.webserver
+[cli-server]: https://www.php.net/features.commandline.webserver

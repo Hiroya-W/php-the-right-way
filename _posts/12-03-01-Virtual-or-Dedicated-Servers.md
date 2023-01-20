@@ -51,7 +51,7 @@ Apache 2.4 以降なら、[mod_proxy_fcgi]が使える。簡単にセットア�
 
 
 [nginx]: https://nginx.org/
-[phpfpm]: https://secure.php.net/install.fpm
+[phpfpm]: https://www.php.net/install.fpm
 [secure-nginx-phpfpm]: https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/
 [apache-modules]: https://httpd.apache.org/docs/2.4/mod/
 [prefork MPM]: https://httpd.apache.org/docs/2.4/mod/prefork.html

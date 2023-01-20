@@ -16,7 +16,6 @@ Oracle にもつなぐことがあるとか、そんな場合は同じドライ�
 そして、データベースが変わるたびに新しい API を覚えないといけないことになる。
 ばかげた話だ。
 
-
-[mysqli]: https://secure.php.net/mysqli
-[pgsql]: https://secure.php.net/pgsql
-[mssql]: https://secure.php.net/mssql
+[mysqli]: https://www.php.net/mysqli
+[pgsql]: https://www.php.net/pgsql
+[mssql]: https://www.php.net/mssql

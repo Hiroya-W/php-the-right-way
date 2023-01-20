@@ -73,5 +73,5 @@ DateTime オブジェクトの加減算とフォーマットの方法の追加�
 * [DateTime][datetime]
 * [日付の書式][dateformat] (日付の書式指定文字列に使えるオプション)
 
-[datetime]: https://secure.php.net/book.datetime
-[dateformat]: https://secure.php.net/function.date
+[datetime]: https://www.php.net/book.datetime
+[dateformat]: https://www.php.net/function.date
