@@ -20,5 +20,3 @@ PHP 5.4.0 からは `register_globals`
 これは、宣言済みの変数の中身を自動的に上書きしてしまうことにつながる。
 PHP 5.4.0 より前のバージョンを使っている場合は、
 __確実に__ `register_globals` を __off__ にしておこう。
-
-* [register_globals に関する PHP マニュアルでの説明](https://secure.php.net/security.globals)
