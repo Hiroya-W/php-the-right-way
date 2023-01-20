@@ -13,7 +13,7 @@ sitemap: true
 
 * [Architectural pattern (Wikipedia)](https://en.wikipedia.org/wiki/Architectural_pattern)
 * [デザインパターン (Wikipedia)](https://ja.wikipedia.org/wiki/%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3_(%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2))
-* [実装サンプル集](http://designpatternsphp.readthedocs.io/en/latest/)
+* [実装サンプル集](https://designpatternsphp.readthedocs.io/en/latest/)
 
 ## ファクトリー
 
@@ -79,14 +79,14 @@ print_r($veyron->getMakeAndModel()); // 出力は "ブガッティ ヴェイロ�
 
 **TODO: NEED NEW SINGLETON CODE EXAMPLE**
 
-このコードは、[*静的* な変数](http://php.net/language.variables.scope#language.variables.scope.static)
+このコードは、[*静的* な変数](https://www.php.net/language.variables.scope#language.variables.scope.static)
 と`getInstance()`メソッドを使ってシングルトンパターンを実装している。
 これらのことに注目しよう。
 
-* コンストラクタ [`__construct`](http://php.net/language.oop5.decon#object.construct) が protected 宣言されている。これで、このクラスの外部からは `new` 演算子で新しいインスタンスを作れなくなる。
-* マジックメソッド [`__clone`](http://php.net/language.oop5.cloning#object.clone) が private 宣言されている。これで、[`clone`](http://php.net/language.oop5.cloning) 演算子でインスタンスをクローンしようとしてもできなくなる。
-* マジックメソッド [`__wakeup`](http://php.net/language.oop5.magic#object.wakeup) が private 宣言されている。これで、グローバル関数 [`unserialize()`](http://php.net/function.unserialize) でのインスタンスのアンシリアライズができなくなる。
-* 新しいインスタンスを作るには、静的な作成用メソッド `getInstance()` による [遅延静的束縛](http://php.net/language.oop5.late-static-bindings) を使う。このメソッドの中ではキーワード `static` が使われていて、サンプルのように `Singleton` のサブクラスを作れるようになる。
+* コンストラクタ [`__construct`](https://www.php.net/language.oop5.decon#object.construct) が protected 宣言されている。これで、このクラスの外部からは `new` 演算子で新しいインスタンスを作れなくなる。
+* マジックメソッド [`__clone`](https://www.php.net/language.oop5.cloning#object.clone) が private 宣言されている。これで、[`clone`](http://php.net/language.oop5.cloning) 演算子でインスタンスをクローンしようとしてもできなくなる。
+* マジックメソッド [`__wakeup`](https://www.php.net/language.oop5.magic#object.wakeup) が private 宣言されている。これで、グローバル関数 [`unserialize()`](https://www.php.net/function.unserialize) でのインスタンスのアンシリアライズができなくなる。
+* 新しいインスタンスを作るには、静的な作成用メソッド `getInstance()` による [遅延静的束縛](https://www.php.net/language.oop5.late-static-bindings) を使う。このメソッドの中ではキーワード `static` が使われていて、サンプルのように `Singleton` のサブクラスを作れるようになる。
 
 シングルトンパターンが有用なのは、たとえばウェブアプリケーションのリクエスト全体で、
 たったひとつのインスタンスだけしかないことを保証しないといけない場合だ。
@@ -151,7 +151,7 @@ class ArrayOutput implements OutputInterface
 その目的は二つ。まずは、具象実装が従うべきシンプルな規約をあてはめること。
 そしてもう一つは、このように共通のインターフェイスを実装することで、
 次のセクションで説明する
-[タイプヒンティング](http://php.net/language.oop5.typehinting)
+[タイプヒンティング](https://www.php.net/language.oop5.typehinting)
 が使え、正しい型（この場合は'OutputInterface'）を使っていることを保証できるということだ。
 
 次のコードは、呼び出し側のクライアントクラスが実際に特定のアルゴリズムを使ったり、
@@ -192,7 +192,7 @@ $data = $client->loadOutput();
 
 {% endhighlight %}
 
-* [ストラテジーパターン (Wikipedia)](http://en.wikipedia.org/wiki/Strategy_pattern)
+* [ストラテジーパターン (Wikipedia)](https://en.wikipedia.org/wiki/Strategy_pattern)
 
 ## フロントコントローラ
 

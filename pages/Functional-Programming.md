@@ -90,6 +90,6 @@ print_r($output); // items > 3
 * [`call_user_func_array()`による動的な関数実行][call-user-func-array]
 
 
-[anonymous-functions]: http://php.net/functions.anonymous
+[anonymous-functions]: https://www.php.net/functions.anonymous
 [closures-rfc]: https://wiki.php.net/rfc/closures
-[call-user-func-array]: http://php.net/function.call-user-func-array
+[call-user-func-array]: https://www.php.net/function.call-user-func-array
