@@ -66,5 +66,5 @@ PHPの開発者にとっては、新しい構文を覚えずに済むという�
 {% endhighlight %}
 
 
-[plates]: http://platesphp.com/
+[plates]: https://platesphp.com/
 [aura]: https://github.com/auraphp/Aura.View

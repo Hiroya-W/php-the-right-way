@@ -48,7 +48,7 @@ _Laravelの [Illuminate コンポーネント] も、将来的には Laravel フ
 [PEAR]: /#pear
 [Dependency Management]: /#依存関係の管理
 [FuelPHP Validation package]: https://github.com/fuelphp/validation
-[Aura]: http://auraphp.com/framework/
+[Aura]: https://auraphp.com/framework/
 [FuelPHP]: https://github.com/fuelphp
 [Hoa Project]: https://github.com/hoaproject
 [Symfony Components]: https://symfony.com/components

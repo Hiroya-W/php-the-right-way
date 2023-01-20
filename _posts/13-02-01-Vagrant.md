@@ -30,4 +30,4 @@ Vagrantを使い始めるときの手助けになるのが、これらのサー�
 [Puppet]: https://puppet.com/
 [Chef]: https://www.chef.io/
 [Puphpet]: https://github.com/puphpet/puphpet
-[Phansible]: http://phansible.com/
+[Phansible]: https://phansible.com/
