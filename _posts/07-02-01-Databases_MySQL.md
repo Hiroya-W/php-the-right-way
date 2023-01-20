@@ -11,14 +11,13 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 - [mysqli]
 - [pdo]
 
-[mysql] 拡張モジュールの開発は大昔に終了していて、 [PHP 5.5.0で「廃止予定」となった][mysql_deprecated]。
-そして、 **[PHP 7.0.0で公式に削除された][mysql_removed]** 。
+[mysql] 拡張モジュールの開発は大昔に終了しているだけでなく、**[PHP 7.0.0で公式に削除されている][mysql_removed]** 。
 
 いま使っているモジュールがどれなのかを知りたいなら、わざわざ `php.ini` の設定を調べるまでもない。
 お好みのエディターで `mysql_*` を検索してみればいい。
 `mysql_connect()` とか `mysql_query()` みたいな関数がヒットしたら、 `mysql` モジュールを使ってるってことだ。
 
-当面は PHP 7.x を使うつもりがないのだとしても、今ちゃんと考えておかないと、いざというときに大変なことになる。
+当面は PHP 7.x 以降を使うつもりがないのだとしても、今ちゃんと考えておかないと、いざというときに大変なことになる。
 いちばんいいのは、通常の開発スケジュールの中で、mysql モジュールを使っている部分を
 [mysqli] や [PDO] に徐々に置き換えていくことだ。
 そうすれば、後になってあせらずにすむ。
@@ -29,7 +28,6 @@ PHP 用の [mysql] 拡張モジュールは既に思いっきり古くなって�
 * [PHP: MySQL 用の API の選択肢][mysql_api]
 
 [mysql]: https://www.php.net/mysqli
-[mysql_deprecated]: https://www.php.net/migration55.deprecated
 [mysql_removed]: https://www.php.net/manual/migration70.removed-exts-sapis.php
 [mysqli]: https://www.php.net/mysqli
 [pdo]: https://www.php.net/pdo
