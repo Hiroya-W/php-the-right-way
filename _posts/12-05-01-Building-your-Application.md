@@ -47,11 +47,6 @@ Capistranoを使いこなすには、RubyとRakeに関するそれなりの知�
 Dave Gardnerのblog記事[PHP Deployment with Capistrano][phpdeploy_capistrano]
 は、Capistranoに興味のあるPHP開発者への入門記事としておすすめだ。
 
-[Rocketeer] は、Laravelフレームワークの思想にヒントを得たものだ。
-高速かつエレガントであり、よく考えられたデフォルト設定で簡単に使えることを目標としている。
-複数サーバーや複数ステージ、アトミックなデプロイに対応していて、複数のデプロイを並列に実行できる。
-すべてのパーツは動かしたままでの交換や拡張に対応しているし、ぜんぶPHPで書かれている。
-
 [Deployer] はPHPで書かれたデプロイツールで、シンプルかつ機能的だ。
 タスクを並列に実行し、アトミックなデプロイを行い、サーバー間の整合性を維持する。
 SymfonyやLaravel、Zend Framework、そしてYiiなどで使える、一般的なタスクのレシピが用意されている。
@@ -154,7 +149,6 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [PHP Censor]: https://github.com/php-censor/php-censor
 [Teamcity]: https://www.jetbrains.com/teamcity/
 [Deployer]: https://deployer.org/
-[Rocketeer]: http://rocketeer.autopergamene.eu/
 [Magallanes]: https://www.magephp.com/
 [deploying_php_applications]: https://deployingphpapplications.com/
 [Ansible]: https://www.ansible.com/
