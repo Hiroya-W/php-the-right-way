@@ -63,7 +63,7 @@ if (password_verify('bad-password', $passwordHash)) {
 }
 {% endhighlight %}
 
-`password_hash()` takes care of password salting for you. The salt is stored, along with the algorithm and "cost", as part of the hash.  `password_verify()` extracts this to determine how to check the password, so you don't need a separate database field to store your salts.
+`password_hash()` は、パスワードのソルトをあなたに代わって管理してくれる。ソルトの情報は、アルゴリズムの情報と "コスト" と一緒に、ハッシュの一部として保存される。`password_verify()` はこの情報を展開してパスワードをチェックする方法を決める。よって、ソルトをデータベースに保存する必要はない。
 
 * [`password_hash` について調べる] [1]
 * [PHP >= 5.3.7 && < 5.5 で使える `password_compat`] [2]
