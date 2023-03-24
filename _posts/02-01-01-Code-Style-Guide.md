@@ -13,7 +13,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 
 [Framework Interop Group][fig] っていうところ
 が、おすすめのスタイルを提案している。
-コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-12][psr12]、そして[PSR-4][psr4]はコーディングスタイルを扱っている。
+コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-12][psr12]、、[PSR-4][psr4]、そして [PER Coding Style][per-cs] はコーディングスタイルを扱っている。
 これって要するに、
 Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトが採用しつつある規約をまとめただけのものなんだ。
@@ -27,6 +27,7 @@ Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lith
 * [PSR-1 とは][psr1]
 * [PSR-12 とは][psr12]
 * [PSR-4 とは][psr4]
+* [PER Coding Style とは][per-cs]
 * [PEARのコーディング規約][pear-cs]
 * [Symfonyのコーディング規約][symfony-cs]
 
@@ -67,6 +68,7 @@ PHPでクリーンなコードを書くための資料としておすすめな�
 [psr1]: https://www.php-fig.org/psr/psr-1/
 [psr12]: https://www.php-fig.org/psr/psr-12/
 [psr4]: https://www.php-fig.org/psr/psr-4/
+[per-cs]: https://www.php-fig.org/per/coding-style/
 [pear-cs]: https://pear.php.net/manual/en/standards.php
 [symfony-cs]: https://symfony.com/doc/current/contributing/code/standards.html
 [phpcs]: https://github.com/squizlabs/PHP_CodeSniffer
