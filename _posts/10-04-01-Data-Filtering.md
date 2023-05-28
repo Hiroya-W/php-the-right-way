@@ -70,8 +70,7 @@ PDO が入力をサニタイズする。
 **たとえそのオブジェクトを一切使わなくても** そのデストラクタは実行されてしまう。
 なので、信頼できないデータのアンシリアライズは避けるべきだ。
 
-どうしてもその必要がある場合は、PHP 7で追加されたオプション [`allowed_classes`][unserialize]
-を使うこと。このオプションは、許可した型のオブジェクトだけをアンシリアライズできるように制限するものだ。
+シリアル化したデータをユーザーに渡す必要がある場合は、([`json_decode`][json_decode] や [`json_encode`][json_encode] 経由で) JSON のような安全で標準的なデータ交換フォーマットを使うようにしよう。
 
 ### バリデーション
 
@@ -89,4 +88,5 @@ PDO が入力をサニタイズする。
 [5]: https://www.php.net/function.filter-input
 [6]: https://www.php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/
-[unserialize]: https://www.php.net/manual/function.unserialize.php
+[json_decode]: https://www.php.net/manual/function.json-decode.php
+[json_encode]: https://www.php.net/manual/en/function.json-encode.php
