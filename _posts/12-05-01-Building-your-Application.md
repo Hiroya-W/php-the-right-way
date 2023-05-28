@@ -47,6 +47,8 @@ Capistranoを使いこなすには、RubyとRakeに関するそれなりの知�
 Dave Gardnerのblog記事[PHP Deployment with Capistrano][phpdeploy_capistrano]
 は、Capistranoに興味のあるPHP開発者への入門記事としておすすめだ。
 
+[Ansistrano] はデプロイプロセス(デプロイやロールバック) を簡単に管理するための Ansible のロールだ。PHP や Python や Ruby のようなスクリプト言語で書かれたアプリケーションで使える。これは、[Capistrano] を Ansible に移植したもので、既にたくさんの PHP を利用している会社で使われている。
+
 [Deployer] はPHPで書かれたデプロイツールで、シンプルかつ機能的だ。
 タスクを並列に実行し、アトミックなデプロイを行い、サーバー間の整合性を維持する。
 SymfonyやLaravel、Zend Framework、そしてYiiなどで使える、一般的なタスクのレシピが用意されている。
@@ -63,9 +65,7 @@ Younes Rafieの記事[Easy Deployment of PHP Applications with Deployer][phpdepl
 * [Expert PHP Deployments][expert_php_deployments] - CapistranoやPhing、Vagrantによるデプロイを扱ったフリーの書籍
 * [Deploying PHP Applications][deploying_php_applications] - PHPのデプロイに関するベストプラクティスやツールを扱った書籍
 
-[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however you can successfully deploy PHP systems with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake.
-
-[Ansistrano] is a couple of Ansible roles to easily manage the deployment process (deploy and rollback) for scripting applications such as PHP, Python and Ruby. It's an Ansible port for [Capistrano]. It's been used by quite a lot of PHP companies already.
+### サーバーの構成管理
 
 サーバーの構成管理は、大量のサーバーを扱うようになると特に大変なタスクだ。
 いろんなツールが用意されているので、こういったインフラの構築を自動化できる。
@@ -90,8 +90,7 @@ Younes Rafieの記事[Easy Deployment of PHP Applications with Deployer][phpdepl
 サーバー環境や仮想マシンをまるごと構築できる。
 Amazon Web Servicesとも統合されていて、OpsWorksというサービスを通じて利用する。
 
-* [Automate your project with Apache Ant][apache_ant_tutorial]
-* [Deploying PHP Applications][deploying_php_applications] - paid book on best practices and tools for PHP deployment.
+#### あわせて読みたい:
 
 * [Ansibleチュートリアル][an_ansible_tutorial]
 * [Ansible for DevOps][ansible_for_devops] - Ansibleのすべてを扱った書籍
@@ -99,15 +98,6 @@ Amazon Web Servicesとも統合されていて、OpsWorksというサービス�
 * [LAMPアプリケーションのデプロイにChefやVagrantそしてEC2を使うというお題で書かれた全3回のシリーズ][chef_vagrant_and_ec2]
 * [Chefのクックブック。PHPのインストールと設定やPEARについて扱っている][Chef_cookbook]
 * [Chefのビデオチュートリアルシリーズ][Chef_tutorial]
-
-#### Further reading:
-
-* [An Ansible Tutorial][an_ansible_tutorial]
-* [Ansible for DevOps][ansible_for_devops] - paid book on everything Ansible
-* [Ansible for AWS][ansible_for_aws] - paid book on integrating Ansible and Amazon Web Services
-* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2][chef_vagrant_and_ec2]
-* [Chef Cookbook which installs and configures PHP and the PEAR package management system][Chef_cookbook]
-* [Chef video tutorial series][Chef_tutorial]
 
 ### 継続的インテグレーション
 
