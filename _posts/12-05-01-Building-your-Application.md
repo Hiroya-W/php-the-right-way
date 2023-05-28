@@ -124,6 +124,7 @@ PHPで継続的インテグレーションを実践する方法はいろいろ�
 ちょっとしたプロジェクトにも簡単に継続的インテグレーションを組み込めるようになった。
 Travis CIは継続的インテグレーションのホスティング環境で、オープンソースコミュニティに開放されている。
 GitHubと統合されており、PHPを含むさまざまな言語に対応している。
+GitHub は、継続的インテグレーションのワークフローとして [GitHub Actions][github_actions] を提供している。
 
 #### あわせて読みたい
 
@@ -156,3 +157,4 @@ GitHubと統合されており、PHPを含むさまざまな言語に対応し�
 [ansible_for_devops]: https://leanpub.com/ansible-for-devops
 [ansible_for_aws]: https://leanpub.com/ansible-for-aws
 [an_ansible_tutorial]: https://serversforhackers.com/an-ansible-tutorial
+[github_actions]: https://docs.github.com/en/actions
