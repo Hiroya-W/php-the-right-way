@@ -22,6 +22,3 @@ anchor:  php_paas_providers
 * [Pivotal Web Services](https://run.pivotal.io/)
 * [Platform.sh](https://platform.sh/)
 * [Red Hat OpenShift](https://www.openshift.com/)
-
-これらのPaaSでどのバージョンのPHPが使われているのかを知りたければ、[PHP Versions](http://phpversions.info/paas-hosting/)
-をチェックしよう。
