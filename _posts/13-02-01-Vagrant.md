@@ -16,18 +16,6 @@ anchor:  vagrant
 Vagrantは、フォルダを作って、ホストと仮想マシンの間でコードを共有する。
 つまり、ホストマシンで作ったり編集したりしたコードを、そのまま仮想マシンの中で実行できるっていうことだ。
 
-### ちょっとした手助け
-
-Vagrantを使い始めるときの手助けになるのが、これらのサービスだ。
-
-- [Puphpet][Puphpet]: PHPの開発用の仮想マシンを作ってくれる、シンプルなGUI。
-  **PHPに特化している。**
-  ローカルVM以外に、クラウドサービスにデプロイすることもできる。
-  プロビジョニングにはPuppetを使う。
-- [Phansible][Phansible]: 使いやすいインターフェイスで、PHP プロジェクト用の Ansible Playbook を生成してくれる。
-
 [Vagrant]: https://www.vagrantup.com/
 [Puppet]: https://puppet.com/
 [Chef]: https://www.chef.io/
-[Puphpet]: https://github.com/puphpet/puphpet
-[Phansible]: https://phansible.com/
