@@ -17,7 +17,7 @@ anchor:  complex_problem
 
 PHPのフレームワークでも、制御の反転は実現されてきた。でも、実際のところ、何の制御を反転しているのだろう。そして、反転した結果、制御はどこに行ってしまったのだろう。
 たとえば、たいていのMVCフレームワークには、あらゆるコントローラの親になる基底コントローラが用意されている。
-そして、それを継承しなければ依存関係のアクセスできない。
+そして、それを継承しなければ依存関係にアクセスできない。
 これはこれで制御の反転だが、でも、依存関係を緩くしたというよりは、単純に依存関係を別の場所に移しただけのことだ。
 
 依存性の注入を使えば、これをもっとすっきりと解決できる。依存関係が必要になったときに、必要なものだけを注入すればいい。
@@ -25,55 +25,32 @@ PHPのフレームワークでも、制御の反転は実現されてきた。�
 
 ### S.O.L.I.D.
 
-#### Single Responsibility Principle
+#### 単一責任の原則
 
-The Single Responsibility Principle is about actors and high-level architecture. It states that “A class should have
-only one reason to change.” This means that every class should _only_ have responsibility over a single part of the
-functionality provided by the software. The largest benefit of this approach is that it enables improved code
-_reusability_. By designing our class to do just one thing, we can use (or re-use) it in any other program without
-changing it.
+単一責任の原則は、アクターと高レベルなアーキテクチャーに関するものだ。これは "クラスを変更する理由は、ひとつだけであるべきである" という原則だ。これは、個々のクラスは、ソフトウェアが提供する単一の機能のみについて責任を持つべきであるということだ。このアプローチを採用する最大の利点は、再利用性を高めることができることにある。我々のクラスがひとつのことだけをしていれば、他のプログラムでもそれを変更することなく使う（または再利用）することができる。
 
-#### Open/Closed Principle
+#### 開放/閉鎖原則
 
-The Open/Closed Principle is about class design and feature extensions. It states that “Software entities (classes,
-modules, functions, etc.) should be open for extension, but closed for modification.” This means that we should design
-our modules, classes and functions in a way that when a new functionality is needed, we should not modify our existing
-code but rather write new code that will be used by existing code. Practically speaking, this means that we should write
-classes that implement and adhere to _interfaces_, then type-hint against those interfaces instead of specific classes.
 
-The largest benefit of this approach is that we can very easily extend our code with support for something new without
-having to modify existing code, meaning that we can reduce QA time, and the risk for negative impact to the application
-is substantially reduced. We can deploy new code, faster, and with more confidence.
+開放/閉鎖原則(Open/Closed Principle) は、クラス設計と機能の拡張に関するものだ。これは"ソフトウェアの要素(クラスやモジュール、関数など)は、拡張に対しては開いており、修正に対しては閉じているべきである" という原則だ。これは、新しい機能が必要になった時は、既存のコードを変更せず、既存のコードを使って新しいコードを書けるようにクラスやモジュール、関数を設計すべきということだ。実用的な言い方をすると、インターフェイスに従ってクラスを実装し、特定のクラスではなく、インターフェイスを使ってタイプヒントを付けるべきということだ。
 
-#### Liskov Substitution Principle
+このアプローチを採用する最大の利点は、既存のコードを変更することなく、新しい機能をサポートできるよう簡単に拡張できることだ。こうすることで、QA にかかる時間を削減でき、アプリケーションを実質的に壊してしまうリスクや、悪い影響を避けることができる。さらにこうすることで、新しいコードを素早く、自信をもってデプロイできるようになる。
 
-The Liskov Substitution Principle is about subtyping and inheritance. It states that “Child classes should never break
-the parent class’ type definitions.” Or, in Robert C. Martin’s words, “Subtypes must be substitutable for their base
-types.”
+#### リスコフの置換原則
 
-For example, if we have a `FileInterface` interface which defines an `embed()` method, and we have `Audio` and `Video`
-classes which both implement the `FileInterface` interface, then we can expect that the usage of the `embed()` method will always
-do the thing that we intend. If we later create a `PDF` class or a `Gist` class which implement the `FileInterface`
-interface, we will already know and understand what the `embed()` method will do. The largest benefit of this approach
-is that we have the ability to build flexible and easily-configurable programs, because when we change one object of a
-type (e.g., `FileInterface`) to another we don't need to change anything else in our program.
+リスコフの置換原則は、サブタイピングと継承に関するものだ。これは "子クラスは、絶対に親クラスの型定義を壊してはいけない" という原則だ。Robert C. Martin の言葉を借りれば "サブタイプは、基底型を代替できなければならない" ということだ。
 
-#### Interface Segregation Principle
+例をあげよう。`embed()` メソッドを定義したインターフェイス `FileInterface` があるとする。そして、このインターフェイスを実装したクラス `Audio` と `Video` があるとして、`embed()` の使い方は常に期待通りであるとしよう。後になって、`FileInterface` を実装した `PDF` や `Gist` クラスを作ることになっても、`embed()` メソッドが何をするかを我々はわかっているはずだ。このアプローチを採用する最大の利点は、柔軟性があり、簡単に設定可能なプログラムを作れることだ。なぜなら、オブジェクトの型 (ここでは `FileInterface`) を別の型に変更しても、プログラムを変更する必要はないからだ。
 
-The Interface Segregation Principle (ISP) is about _business-logic-to-clients_ communication. It states that “No client
-should be forced to depend on methods it does not use.” This means that instead of having a single monolithic interface
-that all conforming classes need to implement, we should instead provide a set of smaller, concept-specific interfaces
-that a conforming class implements one or more of.
+#### インターフェイス分離の原則
 
-For example, a `Car` or `Bus` class would be interested in a `steeringWheel()` method, but a `Motorcycle` or `Tricycle`
-class would not. Conversely, a `Motorcycle` or `Tricycle` class would be interested in a `handlebars()` method, but a
-`Car` or `Bus` class would not. There is no need to have all of these types of vehicles implement support for both
-`steeringWheel()` as well as `handlebars()`, so we should break-apart the source interface.
+インターフェイス分離の原則(ISP)とは、ビジネスロジックとクライアントの通信に関するものだ。これは、"どのクライアントも、自分が使わないメソッドに依存してはいけない" という原則だ。これは、全てのクラスが従い、実装する必要がある単一のモノリシックなインターフェイスを持つのではなく、小さな、特定の概念を持つインターフェイスの集合を提供し、クラスはそれらをひとつ以上実装すべきということだ。
+
+例をあげよう。`Car` や `Bus` クラスは `steeringWheel()` メソッドに関心があるとしよう。一方で、`Motorcycle` や `Tricycle` クラスはそのメソッドに関心がないとする。反対に `Motorcycle` や `Tricycle` は `handlebars()` メソッドに関心があるが、`Car` や `Bus`  メソッドはそのメソッドに関心がないとする。この場合、これら全ての車両の型が `steeringWheel()` と `handlebars()` を両方サポートするために、これらのメソッドを実装する必要はない。インターフェイスを分割すべきだ。
 
 #### 依存関係逆転の原則
 
-The Dependency Inversion Principle is about removing hard-links between discrete classes so that new functionality can
-be leveraged by passing a different class.
+依存関係逆転の原則は、複数の具象クラスの間では、密結合しないようにする原則だ。これを守ると、異なるクラスを渡すことで、新しい機能を利用できるようになる。
 これは *「抽象に依存しろ。具象に依存するな」* という原則だ。
 簡単に言うと、依存関係はインターフェイスや抽象クラスに対して設定すべきものであり、それを実装したクラスに対して設定してはいけないってこと。
 先ほどの例をこの原則に沿って書き直すと、こんなふうになる。
