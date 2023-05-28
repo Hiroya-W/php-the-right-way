@@ -31,6 +31,7 @@ class MysqlAdapter {}
 {% endhighlight %}
 
 このコードを書き換えて依存性の注入を使うようにすれば、この依存関係を緩やかにできる。
+ここでは、コンストラクタに依存性を注入することにし、クラスを横断してプロパティを使えるようにするために [コンストラクタのプロモーション][php-constructor-promotion] を使うことにしよう:
 
 {% highlight php %}
 <?php
@@ -38,11 +39,8 @@ namespace Database;
 
 class Database
 {
-    protected $adapter;
-
-    public function __construct(MySqlAdapter $adapter)
+    public function __construct(protected MySqlAdapter $adapter)
     {
-        $this->adapter = $adapter;
     }
 }
 
@@ -52,3 +50,5 @@ class MysqlAdapter {}
 これで、依存関係を外部から `Database` クラスに渡せるようになった。このクラス自身に作らせる必要がなくなったんだ。
 コンストラクタで指定する以外にも、依存関係を引数で受け取ってそれを設定するようなメソッドを新たに作ってもいいし、
 あるいは `$adapter` という `public` プロパティを作って、依存関係を直接設定できるようにしてもいい。
+
+[php-constructor-promotion]: https://www.php.net/manual/ja/language.oop5.decon.php#language.oop5.decon.constructor.promotion
