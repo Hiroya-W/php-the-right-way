@@ -13,7 +13,7 @@ PHP のコミュニティはとてもでっかくて、いろんな人たちが�
 
 [Framework Interop Group][fig] っていうところ
 が、おすすめのスタイルを提案している。
-コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-12][psr12]、、[PSR-4][psr4]、そして [PER Coding Style][per-cs] はコーディングスタイルを扱っている。
+コーディングスタイルとは関係ないものもあるけれど、[PSR-1][psr1]、[PSR-12][psr12]、[PSR-4][psr4]、そして [PER Coding Style][per-cs] はコーディングスタイルを扱っている。
 これって要するに、
 Drupal や Zend、Symfony、Laravel、CakePHP、phpBB、AWS SDK、FuelPHP、Lithium
 などのプロジェクトが採用しつつある規約をまとめただけのものなんだ。
