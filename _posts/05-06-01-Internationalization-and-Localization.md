@@ -1,109 +1,65 @@
 ---
-title:   Internationalization and Localization
+title:   国際化とローカライズ
 isChild: true
 anchor:  i18n_l10n
 ---
 
-## Internationalization (i18n) and Localization (l10n) {#i18n_l10n_title}
+## 国際化(i18n) とローカライズ(l10n) {#i18n_l10n_title}
 
-_Disclaimer for newcomers: i18n and l10n are numeronyms, a kind of abbreviation where numbers are used to shorten
-words - in our case, internationalization becomes i18n and localization, l10n._
+_初学者の皆さんへのお断り: i18n と l10n はヌメロニム(訳者注: 長い英単語を数字で省略して表現する語)であり、短縮に数字が使われる省略形の一種である - この場合、internationalization は i18n、localization はl10n となる。_
 
-First of all, we need to define those two similar concepts and other related things:
+まず初めに、これらの2つの似た概念と、その他関連するものを定義する必要がある。
 
-- **Internationalization** is when you organize your code so it can be adapted to different languages or regions
-without refactorings. This action is usually done once - preferably, at the beginning of the project, or else you will
-probably need some huge changes in the source!
-- **Localization** happens when you adapt the interface (mainly) by translating contents, based on the i18n work done
-before. It usually is done every time a new language or region needs support and is updated when new interface pieces
-are added, as they need to be available in all supported languages.
-- **Pluralization** defines the rules required between distinct languages to interoperate strings containing numbers and 
-counters. For instance, in English when you have only one item, it is singular, and anything different from that is 
-called plural; plural in this language is indicated by adding an S after some words, and sometimes changes parts of it.
-In other languages, such as Russian or Serbian, there are two plural forms in addition to the singular - you may even
-find languages with a total of four, five or six forms, such as Slovenian, Irish or Arabic.
+- **国際化** とは、コードを構成して、リファクタリングせずとも様々な言語や地域に適応できるようにすることだ。このアクションは、通常一度（可能であれば、プロジェクトの最初に）実行される。さもないと、おそらくソースに大きな変更を加える必要が生じてしまうだろう！
+- **ローカライズ**は、以前に行われたi18nの作業に基づいて、コンテンツを翻訳することによって（主に）インターフェースを適応させると発生する。通常、新しい言語や地域がサポートを必要とされるたびに都度行われ、サポートされるすべての言語で利用可能であることが必要なので、新しいインタフェース部分が追加されるたびに更新される。
+- **複数化** は数字やカウンタを含む文字列を相互運用するために異なる言語間で必要とされる規則を定義する。例えば、英語では、要素が１つしかない場合、それは単数で、それ以外は複数であると言われる。この言語の複数は単語の後ろにSを追加することにより示され、時には単語の一部を変更することもある。
+ロシア語やセルビア語などの他の言語では、単数形に加えて、２つの複数形がある。スロベニア語やアイルランド語、アラビア語など、合計４つや５つ、あるいは６つの複数形を持つ言語もある。
 
-## Common ways to implement
-The easiest way to internationalize PHP software is by using array files and using those strings in templates, such as
-`<h1><?=$TRANS['title_about_page']?></h1>`. This way is, however, hardly recommended for serious projects, as it poses
-some maintenance issues along the road - some might appear in the very beginning, such as pluralization. So, please,
-don't try this if your project will contain more than a couple of pages.
+## 一般的な実装方法
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called `gettext`][gettext]. It dates
-back to 1995 and is still a complete implementation for translating software. It is easy enough to get running, while
-still sporting powerful supporting tools. It is about Gettext we will be talking here. Also, to help you not get messy
-over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source.
+PHPソフトウェアを国際化する最も簡単な方法は、配列ファイルを使ってそれらの文字列を `<h1><?=$TRANS['title_about_page']?></h1>`のように、テンプレートで使うことだ。しかしながら、運用していく中でメンテナンスの問題が発生するので、この方法は本格的なプロジェクトでは全くお勧めできない。複数化など、プロジェクトの最初期に発生する問題もある。したがって、プロジェクトに何ページも含まれるのであれば、この方法を試さないでいただきたい。
 
-### Other tools
+最も古典的な方法で、しばしばi18nやl10nの参考にされることが多いのは、[`gettext`というUnixのツール][gettext]である。これは1995年までさかのぼり、ソフトウェアを翻訳するための完璧な実装である。実行するに十分に易しく、強力なサポートツールを備えている。ここではGettext に関して説明する。また、コマンドラインを混乱させないように、l10nのソースを簡単に更新できる優れたGUIアプリケーションを紹介する。
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to
-install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the
-PHP core, but here we list others for completion:
+### その他のツール
 
-- [aura/intl][aura-intl]: Provides internationalization (I18N) tools, specifically package-oriented per-locale message
-translation. It uses array formats for messages. Does not provide a message extractor, but does provide advanced
-message formatting via the `intl` extension (including pluralized messages).
-- [php-gettext/Gettext][php-gettext]: Gettext support with an OO interface; includes improved helper functions, powerful
-extractors for several file formats (some of them not supported natively by the `gettext` command), and can also export
-to other formats besides `.mo/.po` files. Can be useful if you need to integrate your translation files into other
-parts of the system, like a JavaScript interface.
-- [symfony/translation][symfony]: supports a lot of different formats, but recommends using verbose XLIFF's. Doesn't
-include helper functions nor a built-in extractor, but supports placeholders using `strtr()` internally.
-- [laminas/laminas-i18n][laminas]: supports array and INI files, or Gettext formats. Implements a caching layer to save you from
-reading the filesystem every time. It also includes view helpers, and locale-aware input filters and validators.
-However, it has no message extractor.
+Gettextやその他のi18nの実装をサポートする一般的なライブラリがある。それらの中には、インストールが簡単なものや、追加の機能や i18n ファイルフォーマットを備えているものもある。本ドキュメントでは、PHPコアで提供されるツールにフォーカスするが、ここでは完全を期するために、他のツールを列挙する。
 
-Other frameworks also include i18n modules, but those are not available outside of their codebases:
+- [aura/intl][aura-intl]: 国際化(I18N) ツール、特に、パッケージ指向のロケール毎のメッセージ変換を提供する。メッセージには配列形式を利用する。メッセージ抽出器は提供しないが、`intl` エクステンション（複数化されたメッセージを含む）を介した高度なメッセージフォーマットを提供する。
+- [php-gettext/Gettext][php-gettext]: OOインタフェースでのGettextサポート。改良されたヘルパー関数、いくつかのファイルフォーマットのための強力な抽出器（`gettext` コマンドがネイティブにサポートしないものもある）を含み、`.mo/.po` ファイル以外の他のフォーマットにエクスポートすることもできる。翻訳ファイルをJavaScriptインターフェースなどのシステムの他の部分に統合する必要がある場合に役に立つ。
+- [symfony/translation][symfony]: 様々なフォーマットをサポートするが、冗長な XLIFF を使うのをお勧めする。ヘルパー関数や組み込み抽出器は含まれないが、内部的に `strtr()` を使ってプレースホルダをサポートする。
+- [laminas/laminas-i18n][laminas]: 配列ファイルとINIファイル、あるいはGettextフォーマットをサポートする。キャッシュレイヤを実装していてファイルシステムを毎回読み込む手間を削減する。また、ビューヘルパーやロケール対応した入力フィルタやバリデータも含まれている。
+しかしながら、メッセージ抽出器はない。
 
-- [Laravel] supports basic array files, has no automatic extractor but includes a `@lang` helper for template files.
-- [Yii] supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the
-[`Intl`][intl] extension, available since PHP 5.3, and based on the [ICU project]; this enables Yii to run powerful
-replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
+他のフレームワークにもi18nモジュールが含まれているが、それらはそれらのコードベース以外では利用できない。
 
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so
-you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+- [Laravel] 基本的な配列ファイルをサポートする。自動抽出器はないが、テンプレートファイル向けに`@lang` ヘルパーが用意されている。
+- [Yii] は配列、Gettext、データベースに基づく翻訳をサポートし、メッセージ抽出器が含まれている。PHP 5.3 以降で利用可能な [`Intl`][intl] 拡張を基盤としていて　[ICUプロジェクト]に基づいている。これにより、Yii は、数字のスペルや、日付、時刻、時間、通貨、序数の書式設定などの強力な置換を実行することができる。
+
+抽出器が提供されていないライブラリの１つを選択する場合は、gettext フォーマットを使うのが良いだろう。そうすれば、本章の以降で説明するように、オリジナルのgettext ツールチェイン(Poedit を含む) を使うことができる。
 
 ## Gettext
 
-### Installation
-You might need to install Gettext and the related PHP library by using your package manager, like `apt-get` or `yum`.
-After installed, enable it by adding `extension=gettext.so` (Linux/Unix) or `extension=php_gettext.dll` (Windows) to
-your `php.ini`.
+### インストール
+`apt-get` や `yum`などのパッケージマネージャを使って、Gettextや関連するPHPライブラリをインストールする必要があるかもしれない。インストール後、`extension=gettext.so` (Linux/Unixの場合)、あるいは`extension=php_gettext.dll` (Windowsの場合)を`php.ini` に追加して有効にする。
 
-Here we will also be using [Poedit] to create translation files. You will probably find it in your system's package
-manager; it is available for Unix, macOS, and Windows, and can be [downloaded for free on their website][poedit_download]
-as well.
+ここでは、[Poedit] を使って翻訳ファイルを作成する。おそらくシステムのパッケージマネージャにもあると思う。Unix, macOS, Windows で使うことができ、[poedit_download] [ウェブサイトから無料でダウンロード] することもできる。
 
-### Structure
+### 構造
 
-#### Types of files
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and
-MO (Machine Object) files, the first being a list of readable "translated objects" and the second, the corresponding
-binary to be interpreted by gettext when doing localization. There's also a POT (Template) file, which simply contains
-all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template
-files are not mandatory: depending on the tool you are using to do l10n, you can go just fine with only PO/MO files.
-You will always have one pair of PO/MO files per language and region, but only one POT per domain.
+#### ファイルの型
+gettext を使う際、通常扱うファイルは３つある。主なファイルは PO(Portable Object) ファイルと、MO(Machine Object) ファイルで、１つ目は読み取り可能な「翻訳されたオブジェクト」のリストであり、２つ目は、ローカライズを行う際に、gettext によって解釈される対応するバイナリだ。また他に、POT (Template) ファイルがあり、これはソースファイルからの既存のキーを全て含んでいて、すべてのPOファイルを生成、更新するためのガイドとして利用することができる。これらのテンプレートファイルは必須ではなく、l10n を行う際に用いるツールによっては、PO/MO ファイルだけで事足りる。言語と地域ごとにPO/MO ファイルのペアが常に１つあるが、POTはドメインごとに１つだけだ。
 
-### Domains
-There are some cases, in big projects, where you might need to separate translations when the same words convey 
-different meaning given a context. In those cases, you split them into different _domains_. They are, basically, named
-groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,
-for simplicity, use only one domain; its name is arbitrary, but we will be using "main" for our code samples.
-In [Symfony] projects, for example, domains are used to separate the translation for validation messages.
+### ドメイン
+大きなプロジェクトでは、同じ単語がコンテキストに応じて異なる意味を伝える場合、翻訳を分離する必要がある場合がある。そのような場合、それらを別の _ドメイン_ に分割する。それらは基本的に、POT/PO/MOファイルの名前付きグループであり、その場合のファイル名は前述の _翻訳ドメイン_ である。中小規模のプロジェクトでは通常、単純化するために、１つのドメインのみを使用する。その名前は任意だが、我々のコードサンプルでは「main」を使う。[Symfony] プロジェクトでは、例えば、ドメインはバリデーションメッセージの翻訳を分離するために利用される。
 
-#### Locale code
-A locale is simply a code that identifies one version of a language. It is defined following the [ISO 639-1][639-1] and 
-[ISO 3166-1 alpha-2][3166-1] specs: two lower-case letters for the language, optionally followed by an underline and two
-upper-case letters identifying the country or regional code. For [rare languages][rare], three letters are used.
+#### ロケールコード
+ロケールは単に、言語のあるバージョンを識別するコードであり、[ISO 639-1][639-1] や [ISO 3166-1 alpha2][3166-1] 仕様に沿って定義される。言語には２つの小文字、必要に応じて下線と国や地域のコードを識別する２つの大文字が続く。[レアな言語][rare]には、3文字が使われる。
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different
-countries, such as Austrian German (`de_AT`) or Brazilian Portuguese (`pt_BR`). The second part is used to distinguish
-between those dialects - when it is not present, it is taken as a "generic" or "hybrid" version of the language.
+一部の話者にとっては、国の部分が冗長に思える場合がある。実際、言語の中には、オーストリアドイツ語(`de_AT`) や (ブラジルで話される)ポルトガル語(`pt_BR`) のように、異なる国の方言を持つものがある。２つ目の部分は、これらの方言を区別するために使われる。２つ目の部分がない場合、言語の「汎用」バージョン、あるいは「ハイブリッド」バージョンとして扱われる。
 
-### Directory structure
-To use Gettext, we will need to adhere to a specific structure of folders. First, you will need to select an arbitrary
-root for your l10n files in your source repository. Inside it, you will have a folder for each needed locale, and a
-fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
+### ディレクトリ構造
+Gettext を使うために、特定のフォルダ構造に従う必要がある。まず、ソースリポジトリ内のl10n ファイルに対して任意のルートを選択する必要がある。その中に、必要なロケール毎のフォルダと、すべてのPO/MOペアを含む、固定の `LC_MESSAGES` フォルダを用意する。例： 
 
 {% highlight console %}
 <project root>
@@ -129,31 +85,21 @@ fixed `LC_MESSAGES` folder that will contain all your PO/MO pairs. Example:
        └─ ...
 {% endhighlight %}
 
-### Plural forms
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from
-this trouble once again. When creating a new `.po` file, you will have to declare the [plural rules][plural] for that
-language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When
-calling Gettext in code, you will have to specify the number related to the sentence, and it will work out the correct
-form to use - even using string substitution if needed.
+### 複数形
+「はじめに」で前述したように、言語が異なれば、複数形の規則も異なる。しかしながら、gettextを使えば、この問題は二度と起こらなくなる。新しい`.po`ファイルを作成すると、その言語のための[複数形ルール][plural] を宣言する必要があり、複数形を区別する必要のある翻訳された部分はそれらのルールに対して異なる形式を持つ。コードの中からGettext を呼び出す場合、その文に関連する番号を指定する必要がある。また、必要に応じて文字列置換を使っていても、使用する正しい形式が決定される。
 
-Plural rules include the number of plurals available and a boolean test with `n` that would define in which rule the
-given number falls (starting the count with 0). For example:
+複数形のルールには使用可能な複数の数と、指定された数がどのルールに該当するか(カウントを0から開始する)を定義する`n` を用いたブーリアン型のテストが含まれる。例：
 
-- Japanese: `nplurals=1; plural=0` - only one rule
-- English: `nplurals=2; plural=(n != 1);` - two rules, first if N is one, second rule otherwise
-- Brazilian Portuguese: `nplurals=2; plural=(n > 1);` - two rules, second if N is bigger than one, first otherwise
+- 日本語: `nplurals=1; plural=0` - ルールは１つだけ
+- 英語：`nplurals=2; plural=(n != 1);` - ルールは２つあり、Nが1の場合は１つ目
+- (ブラジルで話される)ポルトガル語: `nplurals=2; plural=(n > 1);` - ルールは２つあり、Nが1より大きい場合は２つ目、そうでなければ１つ目
 
-Now that you understood the basis of how plural rules works - and if you didn't, please look at a deeper explanation
-on the [LingoHub tutorial][lingohub_plurals] -, you might want to copy the ones you need from a [list][plural] instead
-of writing them by hand.
+これで、どのように複数形ルールが機能するかの基礎を理解した。まだ理解できていないのであれば、[LingoHubチュートリアル][lingohub_plurals] の詳しい説明を参照していただきたい。必要なものを手で書くのではなく、[リスト][plural]からコピーしたいと思うかもしれない。
 
-When calling out Gettext to do localization on sentences with counters, you will have to provide it the
-related number as well. Gettext will work out what rule should be in effect and use the correct localized version.
-You will need to include in the `.po` file a different sentence for each plural rule defined.
+カウンタを使って文のローカライズを行うためにGettextを呼び出す場合、関連する数も同様に用意する必要がある。Gettext はどのルールが反映されるべきかを判断し、正しいローカライズされたバージョンを使用する。定義された各複数形ルール毎に異なる文を`.po` ファイルに含める必要がある。
 
-### Sample implementation
-After all that theory, let's get a little practical. Here's an excerpt of a `.po` file - don't mind with its format,
-but with the overall content instead; you will learn how to edit it easily later:
+### 実装例
+理論面が一通り終わったら、少し実用的なことを扱おう。ここに、`.po` ファイルの抜粋がある。フォーマットについては気にしないでいただきたいが、代わりに全体的な内容を示す。後で簡単に編集する方法を学ぼう。
 
 {% highlight po %}
 msgid ""
@@ -174,58 +120,34 @@ msgstr[0] "Só uma mensagem não lida"
 msgstr[1] "%d mensagens não lidas"
 {% endhighlight %}
 
-The first section works like a header, having the `msgid` and `msgstr` especially empty. It describes the file encoding,
-plural forms and other things that are less relevant.
-The second section translates a simple string from English to
-Brazilian Portuguese, and the third does the same, but leveraging string replacement from [`sprintf`][sprintf] so the
-translation may contain the user name and visit date.
-The last section is a sample of pluralization forms, displaying
-the singular and plural version as `msgid` in English and their corresponding translations as `msgstr` 0 and 1
-(following the number given by the plural rule). There, string replacement is used as well so the number can be seen
-directly in the sentence, by using `%d`. The plural forms always have two `msgid` (singular and plural), so it is
-advised not to use a complex language as the source of translation.
+最初のセクションはヘッダのように機能し、`msgid` と `msgstr` は特別に空っぽである。これはファイルエンコーディング、複数形、その他あまり関係ないことを説明している。
+２つ目のセクションは単純な文字列を英語から(ブラジルで話される)ポルトガル語へ翻訳し、３つ目のセクションも同じことを行っているが、[`sprintf`][sprintf]からの文字列置換を使って、翻訳にユーザ名と訪問日が含まれるようにする。
+最後のセクションは複数化形式の例で、単数と複数のバージョン英語で`msgid`として、対応する翻訳を`msgstr` 0と1として表示している（複数形ルールで指定された数字に続く）。ここで、文字列置換も使われているので、数字は`%d`を使って文の中で直接参照することができる。複数形は常に２つの`msgid`(単数と複数) があるので、翻訳のソースとして複雑な言語を用いないことをお勧めする。 
 
-### Discussion on l10n keys
-As you might have noticed, we are using as source ID the actual sentence in English. That `msgid` is the same used
-throughout all your `.po` files, meaning other languages will have the same format and the same `msgid` fields but
-translated `msgstr` lines.
+### l10n のキーに関する議論
+お気づきかもしれないが、我々は英語の実際の文をソースIDとて使っている。その`msgid`はすべての`.po` ファイルで同じように使われている。これはつまり、他の言語も同じフォーマットと同じ`msgid`フィールドを持っているが、`msgstr`行は翻訳されている。
 
-Talking about translation keys, there are two main "schools" here:
+翻訳キーに関していえば、ここには２つの主要な「流派」がある。
 
-1. _`msgid` as a real sentence_.
-    The main advantages are:
-    - if there are pieces of the software untranslated in any given language, the key displayed will still maintain some
-    meaning. Example: if you happen to translate by heart from English to Spanish but need help to translate to French,
-    you might publish the new page with missing French sentences, and parts of the website would be displayed in English
-    instead;
-    - it is much easier for the translator to understand what's going on and do a proper translation based on the
-    `msgid`;
-    - it gives you "free" l10n for one language - the source one;
-    - The only disadvantage: if you need to change the actual text, you would need to replace the same `msgid`
-    across several language files.
+1. _実際の文としての `msgid`_.
+    主な利点は下記の通り：
+    - 特定の言語で翻訳されていないソフトウェアがある場合、表示されるキーは何らかの意味を保持している。例：英語からスペイン語に翻訳したが、フランス語に翻訳するのに助けを必要とする場合、フランス語の文が欠けた新しいページを公開すると、そのウェブサイトの一部が代わりに英語で表示される。
+    - 翻訳者にとって、何が起こっているかを理解し、`msgid` に基づいて適切な翻訳を行う方がはるかに簡単だ。
+    - ある言語（ソース言語）に対して、「無料の」l10n を提供する。
+    - 唯一の欠点は、実際のテキストを変更する必要がある場合、複数の言語ファイルで同じ`msgid`を置換する必要があることだ。
 
-2. _`msgid` as a unique, structured key_.
-It would describe the sentence role in the application in a structured way, including the template or part where the
-string is located instead of its content.
-    - it is a great way to have the code organized, separating the text content from the template logic.
-    - however, that could bring problems to the translator that would miss the context. A source language file would be
-    needed as a basis for other translations. Example: the developer would ideally have an `en.po` file, that
-    translators would read to understand what to write in `fr.po` for instance.
-    - missing translations would display meaningless keys on screen (`top_menu.welcome` instead of `Hello there, User!`
-    on the said untranslated French page). That is good it as would force translation to be complete before publishing -
-    however, bad as translation issues would be remarkably awful in the interface. Some libraries, though, include an
-    option to specify a given language as "fallback", having a similar behavior as the other approach.
+2. _一意な構造化されたキーとしての `msgid`_
+これはアプリケーション内の文の役割を構造化された方法で記述する。これには、文字列の内容ではなく、文字列が配置されたテンプレート、あるいは一部が含まれている。
+    - テキストの内容をテンプレートのロジックから分離して、コードを整理するにはすばらしい方法だ。
+    - しかしながら、それは翻訳者にコンテキストを見逃すような問題をもたらすかもしれない。ソース言語ファイルは、他の翻訳の基礎として必要になる。例：開発者は理想的には`en.po`ファイルがあって、翻訳者は、例えば`fr.po`に何を書くかを理解するためにそれを読む。
+    - 翻訳がないと、意味のないキーが画面に表示される(前述の翻訳されていないフランス語のページでは、`Hello there, User!` ではなく、`top_menu.welcome` が表示される。) 公開前に無理やり翻訳を完成させるのは、よいことだが、しかしながら、翻訳の問題はインタフェースで非常にひどいものになる。しかしながら、ライブラリの中には、他のアプローチと同様の振る舞いをもつ特定の言語を「フォールバック」として指定するオプションが含まれているものもある。
 
-The [Gettext manual][manual] favors the first approach as, in general, it is easier for translators and users in
-case of trouble. That is how we will be working here as well. However, the [Symfony documentation][symfony-keys] favors
-keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
+[Gettextマニュアル][manual] では、通常、翻訳者やユーザがトラブルに見舞われた場合に簡単に対処できるように、最初のアプローチを採用している。なのでここでもそのような作業を行う。しかしながら、[Symfonyドキュメント][symfony-keys]では、キーワードに基づく翻訳を採用していて、テンプレートに影響を及ぼすことなくすべての翻訳を個別に変更ができるようにしている。
 
-### Everyday usage
-In a typical application, you would use some Gettext functions while writing static text in your pages. Those sentences
-would then appear in `.po` files, get translated, compiled into `.mo` files and then, used by Gettext when rendering
-the actual interface. Given that, let's tie together what we have discussed so far in a step-by-step example:
+### お決まりの使い方
+一般的なアプリケーションでは、ページに静的なテキストを書く際にGettext関数を用いる。これらの文は、`.po` ファイルに現れ、翻訳され、`.mo` ファイルにコンパイルされ、実際のインタフェースをレンダリングを行う際にGettext によって使用される。なので、これまで議論してきた内容を段階的な例でまとめてみよう。
 
-#### 1. A sample template file, including some different gettext calls
+#### 1. いくつかの異なる gettext 呼び出しを含むサンプルテンプレートファイル
 {% highlight php %}
 <?php include 'i18n_setup.php' ?>
 <div id="header">
@@ -245,13 +167,11 @@ the actual interface. Given that, let's tie together what we have discussed so f
 <p><?=gettext('We\'re now translating some strings')?></p>
 {% endhighlight %}
 
-- [`gettext()`][func] simply translates a `msgid` into its corresponding `msgstr` for a given language. There's also
-the shorthand function `_()` that works the same way;
-- [`ngettext()`][n_func] does the same but with plural rules;
-- There are also [`dgettext()`][d_func] and [`dngettext()`][dn_func], that allow you to override the domain for a single
-call. More on domain configuration in the next example.
+- [`gettext()`][func] は、指定された言語に対して、`msgid` を対応する `msgstr` に単に変換する。同様に動作する簡単な関数 `_()` もある。
+- [`ngettext()`][n_func] は同じことをするが、複数形ルールを適用する。
+- [`dgettext()`][d_func] や、[`dngettext()`][dn_func] もあり、１回の呼び出しでドメインを上書きできるようにする。ドメイン設定の詳細については、次の例を参照していただきたい。
 
-#### 2. A sample setup file (`i18n_setup.php` as used above), selecting the correct locale and configuring Gettext
+#### 2. サンプルセットアップファイル(上記で用いた `i18n_setup.php`)、正しいロケールの選択や、Gettext の設定を行う
 {% highlight php %}
 <?php
 /**
@@ -309,92 +229,51 @@ textdomain('main');
 ?>
 {% endhighlight %}
 
-#### 3. Preparing translation for the first run
-One of the great advantages Gettext has over custom framework i18n packages is its extensive and powerful file format.
-"Oh man, that’s quite hard to understand and edit by hand, a simple array would be easier!" Make no mistake,
-applications like [Poedit] are here to help - _a lot_. You can get the program from [their website][poedit_download],
-it’s free and available for all platforms. It’s a pretty easy tool to get used to, and a very powerful one at the same
-time - using all features Gettext has available. This guide is based on PoEdit 1.8.
+#### 3. 最初に実行するための翻訳の準備
+Gettext が独自のフレームワークの i18n パッケージに対して持っている大きな利点の１つは、広範で強力なファイルフォーマットだ。「ああ、Gettext のフォーマットを理解し、手で編集することは非常に困難だ。単純な配列の方が簡単だ！」間違いなく、[Poedit] のようなアプリケーションが _大いに_ 助けになる。[彼らのウェブサイト][poedit_download]からプログラムを入手することができ、すべてのプラットフォームで無料で利用することができる。これは、使い慣れるのにかなり簡単なツールであり、同時に非常に強力なツールである。Gettextが利用できるすべての機能を使う。このガイドはPoEdit 1.8 に基づいている。
 
-In the first run, you should select “File > New...” from the menu. You’ll be asked straight ahead for the language:
-here you can select/filter the language you want to translate to, or use that format we mentioned before, such as
-`en_US` or `pt_BR`.
+最初の実行では、メニューから、「File > New...」を選択する必要がある。言語を直接入力するように求められる。ここで翻訳したい言語を選択／フィルタするか、あるいは`en_US` や `pt_BR` のような、前述した形式を使用できる。
 
-Now, save the file - using that directory structure we mentioned as well. Then you should click “Extract from sources”,
-and here you’ll configure various settings for the extraction and translation tasks. You’ll be able to find all those
-later through “Catalog > Properties”:
+次に、先に説明したディレクトリ構造を使ってファイルを保存する。さらに、「Extract from sources」をクリックし、ここで抽出タスクと翻訳タスクの様々な設定を行う。「Catalog > Properties」で後からこれらすべてを見つけることができるようになる。
 
-- Source paths: here you must include all folders from the project where `gettext()` (and siblings) are called - this
-is usually your templates/views folder(s). This is the only mandatory setting;
-- Translation properties:
-    - Project name and version, Team and Team’s email address: useful information that goes in the .po file header;
-    - Plural forms: here go those rules we mentioned before - there’s a link in there with samples as well. You can
-    leave it with the default option most of the time, as PoEdit already includes a handy database of plural rules for
-    many languages.
-    - Charsets: UTF-8, preferably;
-    - Source code charset: set here the charset used by your codebase - probably UTF-8 as well, right?
-- Source keywords: The underlying software knows how `gettext()` and similar function calls look like in several
-programming languages, but you might as well create your own translation functions. It will be here you’ll add those
-other methods. This will be discussed later in the “Tips” section.
+- ソースパス：ここには、`gettext()`(とその兄弟) が呼び出されるプロジェクトのすべてのフォルダを含める必要がある。これは通常はtemplates/views フォルダだ。これは唯一の必須設定項目である。
+- トランザクションプロパティ：
+    - プロジェクト名とバージョン、チーム、およびチームのメールアドレス、.poファイルヘッダに含まれる有用な情報
+    - 複数形：前述したルールを参照してほしい。サンプルへのリンクもそこにある。ほとんどの場合、PoEdit にはすでに多くの言語の複数形ルールの手頃なデータベースが含まれているので、デフォルトオプションのままにしておいて良い。
+    - 文字セット： UTF-8 (推奨)
+    - ソースコードの文字セット：コードベースで使っている文字セットをここに設定する。おそらく、UTF-8ってことでいいよね？
+- ソースキーワード：基盤となるソフトウェアは、`gettext()` や同様の関数呼び出しがいくつかのプログラミング言語でどのように見えるかを知っているが、独自の翻訳関数を作成する方が良い場合もある。ここでは、そんな別のメソッドを追加する。これについては、後述する「Tips」の章で説明する。
 
-After setting those points it will run a scan through your source files to find all the localization calls. After every
-scan PoEdit will display a summary of what was found and what was removed from the source files. New entries will fed
-empty into the translation table, and you’ll start typing in the localized versions of those strings. Save it and a .mo
-file will be (re)compiled into the same folder and ta-dah: your project is internationalized.
+これらのポイントを設定した後、PoEditはソースファイルをスキャンしてローカライズの呼び出しを全て洗い出す。スキャンするたびに、PoEdit は検出されたものとソースファイルから削除された内容のサマリを表示する。新しいエントリは空のまま変換テーブルに入力され、ローカライズされたバージョンの文字列を入力し始める。それが保存されると、.mo ファイルは同じフォルダに（再び)コンパイルされ、プロジェクトが国際化される。
 
-#### 4. Translating strings
-As you may have noticed before, there are two main types of localized strings: simple ones and those with plural
-forms. The first ones have simply two boxes: source and localized string. The source string cannot be modified as
-Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan
-the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that
-string is being used.
-On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure
-the different final forms.
+#### 4. 翻訳文字列
+すでにお気づきかもしれないが、ローカライズされた文字列には、２つの主なタイプがある。単数のものとそれを複数形にしたものだ。１つ目は、ソースとローカライズされた文字列の２つのボックスがあるだけだ。Gettext/Poedit にはソースファイルを変更する権限がないので、ソース文字列は変更ができない。ソース自体を変更して、再スキャンする必要がある。ヒント：翻訳行を右クリックすると、その文字列が使われているソースファイルと行のヒントが表示される。
+他方、複数形文字列には２つのソース文字列を表示する２つのボックスと、様々な最終形式が設定可能なタブが含まれている。
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,
-removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some
-translations, based on other ones you did. Those guesses and the changed entries will receive a "Fuzzy" marker,
-indicating it needs review, appearing golden in the list. It is also useful if you have a translation team and someone
-tries to write something they are not sure about: just mark Fuzzy, and someone else will review later.
+ソースを変更して翻訳を更新する必要がある場合はいつでも、Refresh をクリックするだけで Poedit はコードを再スキャンし、存在しないエントリを削除し、変更されたエントリをマージして新しいエントリを追加する。あなたが行った他の翻訳に基づいて、いくつかの翻訳を推測しようとする場合もある。それらの推論と変更されたエントリには「Fuzzy」マーカーが付与され、検証が必要であることが示され、リスト中に金色で表示される。もし翻訳チームがいて、誰かが確かじゃないことを書こうとする場合にも便利だ。Fuzzy をマークするだけで、他の誰かが後からレビューしてくれるからだ。
 
-Finally, it is advised to leave "View > Untranslated entries first" marked, as it will help you _a lot_ to not forget
-any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for
-translators if needed.
+最後に、「View > Untranslated entries first」マークをつけておくことをお勧めする。これは、エントリを忘れないようにするのに_大いに_役に立つからだ。このメニューから、必要に応じて、翻訳者たちにコンテキスト情報を残すことができる UI をオープンすることもできる。
 
-### Tips & Tricks
+### ヒントとコツ
 
-#### Possible caching issues
-If you are running PHP as a module on Apache (`mod_php`), you might face issues with the `.mo` file being cached. It
-happens the first time it is read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it
-usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
+#### キャッシング問題の可能性
+PHPをApache 上のモジュール(`mod_php`) として実行している場合、`.mo` ファイルがキャッシュされる問題に直面するかもしれない。これは最初に読み込まれた時に発生し、これを更新するには、サーバを再起動する必要がある。Nginx と PHP5 では通常、翻訳キャッシュを更新するのに、数ページを更新するだけでよく、PHP7 ではほとんど必要ない。
 
-#### Additional helper functions
-As preferred by many people, it is easier to use `_()` instead of `gettext()`. Many custom i18n libraries from
-frameworks use something similar to `t()` as well, to make translated code shorter. However, that is the only function
-that sports a shortcut. You might want to add in your project some others, such as `__()` or `_n()` for `ngettext()`,
-or maybe a fancy `_r()` that would join `gettext()` and `sprintf()` calls. Other libraries, such as
-[php-gettext's Gettext][php-gettext] also provide helper functions like these.
+#### 付加的なヘルパー関数
+多くの人々に好まれているように、`gettext()` の代わりに、`_()` を使う方が簡単だ。フレームワークに備わっている多くのカスタム i18n ライブラリも、変換されたコードを短くするために`t()` に似たものを使っている。しかしながら、これはショートカットを備えた唯一の関数だ。`ngettext()` のための`__()`や`_n()`をプロジェクトに追加したり、華美な`_r()` を`gettext()` や `sprintf()`の呼び出しに追加したくなるかもしれない。[php-gettextのGettext][php-gettext] のような他のライブラリでも、これらのようなヘルパー関数が提供されている。
 
-In those cases, you'll need to instruct the Gettext utility on how to extract the strings from those new functions.
-Don't be afraid; it is very easy. It is just a field in the `.po` file, or a Settings screen on Poedit. In the editor,
-that option is inside "Catalog > Properties > Source keywords". Remember: Gettext already knows the default functions
-for many languages, so don’t be afraid if that list seems empty. You need to include there the specifications of those
-new functions, following [a specific format][func_format]:
+そのような場合、それらの新しい関数から文字列を抽出する方法をGettextユーティリティに指示する必要がある。しかし恐れる必要はない。とても簡単だ。これは`.po` ファイルにあるフィールド、あるいはPoedit の設定画面だ。エディタでは、そのオプションは「Catalog > Properties > Source keywords」の中にある。覚えておいてほしいのは、Gettext は多くの言語のためのデフォルト関数がすでにわかっているので、そのリストが空っぽのように見えても恐れる必要はない、ということだ。[特定の形式][func_format]に従って、これらの新しい関数の仕様をそこに含める必要がある。
 
-- if you create something like `t()` that simply returns the translation for a string, you can specify it as `t`.
-Gettext will know the only function argument is the string to be translated;
-- if the function has more than one argument, you can specify in which one the first string is - and if needed, the
-plural form as well. For instance, if we call our function like this: `__('one user', '%d users', $number)`, the
-specification would be `__:1,2`, meaning the first form is the first argument, and the second form is the second
-argument. If your number comes as the first argument instead, the spec would be `__:2,3`, indicating the first form is
-the second argument, and so on.
+- 単に文字列の翻訳を返す`t()`のようなものを作成する場合、`t` と指定することができる。
+Gettextは関数の引数が翻訳されるべき文字列であると認識する.
+- 関数に複数の引数がある場合、最初の文字列がどれであるかを指定することができる。また、必要に応じて、複数形も指定することができる。例えば、このように：`__('one user', '%d users', $number)` 関数を呼び出すと、その指定は`__:1,2` になり、これは最初の形式が１つ目の引数で、2つめの形式が２つ目の引数であることを意味する。代わりに、数字が最初の引数として指定された場合、指定は、`__:2,3`とな離、最初の形式が２つ目の引数であること示す、という具合だ。
 
-After including those new rules in the `.po` file, a new scan will bring in your new strings just as easy as before.
+これらの新しいルールを`.po` ファイルに含めたあと、新たにスキャンを実行すると、以前と同様、簡単に新しい文字列が取り込まれる。
 
-### References
+### リファレンス
 
-* [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
-* [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
+* [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization) [日本語版](https://ja.wikipedia.org/wiki/%E5%9B%BD%E9%9A%9B%E5%8C%96%E3%81%A8%E5%9C%B0%E5%9F%9F%E5%8C%96)
+* [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext) [日本語版](https://ja.wikipedia.org/wiki/Gettext)
 * [LingoHub: PHP internationalization with gettext tutorial][lingohub]
 * [PHP Manual: Gettext](https://www.php.net/manual/book.gettext.php)
 * [Gettext Manual][manual]
@@ -404,9 +283,9 @@ After including those new rules in the `.po` file, a new scan will bring in your
 [lingohub]: https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/
 [lingohub_plurals]: https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/#Plurals
 [plural]: https://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html
-[gettext]: https://en.wikipedia.org/wiki/Gettext
+[gettext]: https://en.wikipedia.org/wiki/Gettext [日本語版](https://ja.wikipedia.org/wiki/Gettext)
 [manual]: https://www.gnu.org/software/gettext/manual/gettext.html
-[639-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+[639-1]: https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes [日本語版](https://ja.wikipedia.org/wiki/ISO_639-1%E3%82%B3%E3%83%BC%E3%83%89%E4%B8%80%E8%A6%A7)
 [3166-1]: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 [rare]: https://www.gnu.org/software/gettext/manual/gettext.html#Rare-Language-Codes
 [func_format]: https://www.gnu.org/software/gettext/manual/gettext.html#Language-specific-options
