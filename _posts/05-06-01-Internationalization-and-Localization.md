@@ -161,7 +161,7 @@ msgstr[1] "%d mensagens não lidas"
 <?php include 'i18n_setup.php' ?>
 <div id="header">
     <h1><?=sprintf(gettext('Welcome, %s!'), $name)?></h1>
-    <!-- code indented this way only for legibility -->
+    <!-- 可読性のためだけに、こういう風にコードをインデントしている -->
     <?php if ($unread): ?>
         <h2><?=sprintf(
             ngettext('Only one unread message',
@@ -185,7 +185,7 @@ msgstr[1] "%d mensagens não lidas"
 {% highlight php %}
 <?php
 /**
- * Verifies if the given $locale is supported in the project
+ * 指定された $locale を、プロジェクトでサポートしているかを確認する
  * @param string $locale
  * @return bool
  */
@@ -193,18 +193,18 @@ function valid($locale) {
    return in_array($locale, ['en_US', 'en', 'pt_BR', 'pt', 'es_ES', 'es']);
 }
 
-//setting the source/default locale, for informational purposes
+//参考情報として、ソースとなる/デフォルトのロケールを設定
 $lang = 'en_US';
 
 if (isset($_GET['lang']) && valid($_GET['lang'])) {
-    // the locale can be changed through the query-string
-    $lang = $_GET['lang'];    //you should sanitize this!
-    setcookie('lang', $lang); //it's stored in a cookie so it can be reused
+    // ロケールはクエリストリングで変更できる
+    $lang = $_GET['lang'];    //無害化すべき！
+    setcookie('lang', $lang); //再利用できるように、cookie に保存
 } elseif (isset($_COOKIE['lang']) && valid($_COOKIE['lang'])) {
-    // if the cookie is present instead, let's just keep it
-    $lang = $_COOKIE['lang']; //you should sanitize this!
+    // cookie が存在している場合、その値を使う
+    $lang = $_COOKIE['lang']; //無害化すべき！
 } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-    // default: look for the languages the browser says the user accepts
+    // デフォルト: ユーザーが受け入れるとブラウザが言っている言語を探す
     $langs = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
     array_walk($langs, function (&$lang) { $lang = strtr(strtok($lang, ';'), ['-' => '_']); });
     foreach ($langs as $browser_lang) {
@@ -215,26 +215,26 @@ if (isset($_GET['lang']) && valid($_GET['lang'])) {
     }
 }
 
-// here we define the global system locale given the found language
+// 見つかった言語を指定して、グローバルなシステムロケールをここで定義する
 putenv("LANG=$lang");
 
-// this might be useful for date functions (LC_TIME) or money formatting (LC_MONETARY), for instance
+// こうしておくと、たとえば日付関数(LC_TIME) や 通貨のフォーマット(LC_MONETARY) で役立つかも
 setlocale(LC_ALL, $lang);
 
-// this will make Gettext look for ../locales/<lang>/LC_MESSAGES/main.mo
+// Gettext に ../locales/<lang>/LC_MESSAGES/main.mo を探すように指示する
 bindtextdomain('main', '../locales');
 
-// indicates in what encoding the file should be read
+// ファイルを読み出すときに、どのエンコーディングを使うかを指示する
 bind_textdomain_codeset('main', 'UTF-8');
 
-// if your application has additional domains, as cited before, you should bind them here as well
+// アプリケーションに追加で、翻訳のドメインがある場合、既に説明したように、ここでバインドしておく
 bindtextdomain('forum', '../locales');
 bind_textdomain_codeset('forum', 'UTF-8');
 
-// here we indicate the default domain the gettext() calls will respond to
+// gettext() がコールされたときに、応答するデフォルトのドメインをここで指定する
 textdomain('main');
 
-// this would look for the string in forum.mo instead of main.mo
+// 以下のようにすると、main.mo ではなく、forum.mo にある文字列を探すようになる
 // echo dgettext('forum', 'Welcome back!');
 ?>
 {% endhighlight %}
